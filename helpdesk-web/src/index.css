@@ -1,0 +1,419 @@
+/* ===========================================================================
+ WHAT: All styling for the Helpdesk app, loaded once by src/main.jsx.
+ WHY one file: for a small app, a single stylesheet beats the overhead of
+ CSS-in-JS or utility frameworks — and it keeps every visual rule in a
+ place you can read top-to-bottom.
+
+ THE CLASS NAMES HERE MATCH THE ONES USED IN Login.jsx / Tickets.jsx
+ (card, badge, status-open, priority-high, ...) — that's the contract
+ between the JSX and this file.
+=========================================================================== */
+
+/* --- RESET & PAGE -------------------------------------------------------- */
+/* box-sizing: borders/padding no longer add to width (predictable layouts) */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Full-height light-gray background — cards "pop" against it (see .card) */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  background: #f3f4f6; /* light gray */
+  color: #111827;      /* near-black text for contrast */
+}
+
+/* .page centers content and caps width so lines aren't full-screen wide */
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+/* --- CARD (white surface used by every section) ------------------------- */
+/* The core visual idea: light gray page + white rounded cards = clean UI */
+.card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04); /* barely-there depth */
+}
+
+.card h2 {
+  margin: 0 0 14px;
+  font-size: 1.05rem;
+}
+
+/* --- TOP BAR ------------------------------------------------------------- */
+.topbar {
+  display: flex;
+  justify-content: space-between; /* title left, logout right */
+  align-items: center;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+/* --- FORMS --------------------------------------------------------------- */
+label {
+  /* Flex column = label text above its input, stacked */
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+input,
+textarea,
+select {
+  font: inherit; /* inherit page font instead of browser defaults */
+  padding: 9px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 7px;
+  background: #fff;
+  color: #111827;
+}
+
+/* Focus ring = accessibility: keyboard users see where they are */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid #2563eb;
+  outline-offset: 1px;
+  border-color: #2563eb;
+}
+
+textarea {
+  resize: vertical; /* allow vertical resize only */
+}
+
+/* Primary buttons (Create, Login, Register) */
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  border-radius: 7px;
+  padding: 9px 16px;
+  background: #2563eb; /* blue */
+  color: #fff;
+  font-weight: 600;
+}
+
+button:hover {
+  background: #1d4ed8; /* darker on hover = click affordance */
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Destructive action (Delete) — red variant */
+button.danger {
+  background: #ef4444;
+}
+
+button.danger:hover {
+  background: #dc2626;
+}
+
+/* Bare "link-like" button (Logout, mode toggle) */
+.link-btn {
+  background: transparent;
+  color: #2563eb;
+  padding: 4px 6px;
+}
+
+.link-btn:hover {
+  background: transparent;
+  text-decoration: underline;
+}
+
+/* --- ALERT (error banner) ------------------------------------------------ */
+.alert {
+  background: #fef2f2; /* pale red */
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+  padding: 10px 12px;
+  border-radius: 7px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+}
+
+/* --- AUTH CARD (login/register) ----------------------------------------- */
+.auth-card {
+  /* Vertically separated, centered box just for the login form */
+  margin-top: 8vh;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.auth-card h1 {
+  margin: 0 0 4px;
+  font-size: 1.5rem;
+}
+
+.auth-card h2 {
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.auth-card form button {
+  width: 100%; /* full-width submit */
+  margin-top: 4px;
+}
+
+.auth-card .link-btn {
+  display: block;
+  margin: 12px auto 0;
+}
+
+/* --- BADGES (status & priority pills) ----------------------------------- */
+/* One shared shape; each status/priority only changes color. A "pill" is
+   just an inline-block with full border-radius */
+.badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: capitalize; /* "open" → "Open" without rewriting text */
+}
+
+/* Status colors */
+.status-open {
+  background: #dbeafe; color: #1d4ed8;
+} /* blue = needs attention */
+
+.status-in_progress {
+  background: #fef3c7; color: #b45309;
+} /* amber = being worked on */
+
+.status-closed {
+  background: #d1fae5; color: #047857;
+} /* green = done */
+
+/* Priority colors (red = most urgent) */
+.priority-low {
+  background: #e5e7eb; color: #374151;
+}
+
+.priority-medium {
+  background: #fef3c7; color: #b45309;
+}
+
+.priority-high {
+  background: #fee2e2; color: #b91c1c;
+}
+
+/* --- TICKET LIST --------------------------------------------------------- */
+.ticket-list {
+  list-style: none; /* remove default bullets */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* space between cards */
+}
+
+.ticket {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 12px 14px;
+  background: #fafafa;
+}
+
+.ticket-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.ticket-desc {
+  margin: 8px 0;
+  color: #4b5563;
+  font-size: 0.92rem;
+  white-space: pre-wrap; /* keep line breaks the user typed */
+}
+
+.ticket-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Dropdown/delete sit to the right of the badges */
+.ticket-meta select {
+  margin-left: auto;
+  padding: 5px 8px;
+  font-size: 0.85rem;
+}
+
+.ticket-meta .danger {
+  padding: 5px 12px;
+  font-size: 0.85rem;
+}
+
+.empty {
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* ===========================================================================
+ RBAC & ADMIN STYLES — added when roles/categories shipped. Same palette
+ and conventions as above (class names match Tickets.jsx / Admin.jsx).
+=========================================================================== */
+
+/* --- TOP NAV (Links from react-router-dom render as <a>) ----------------- */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.nav a {
+  color: #4b5563;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent; /* reserves space for .active */
+}
+
+.nav a:hover {
+  color: #2563eb;
+}
+
+.nav a.active {
+  color: #2563eb;
+  border-bottom-color: #2563eb; /* underline = "you are here" */
+}
+
+/* --- ROLE CHIPS (topbar) ------------------------------------------------- */
+.role-user   { background: #e5e7eb; color: #374151; }
+.role-agent  { background: #dbeafe; color: #1d4ed8; }
+.role-admin  { background: #ede9fe; color: #6d28d9; }
+
+/* --- EXTRA BADGES ON TICKET ROWS ---------------------------------------- */
+/* Wraps the right-side badges in .ticket-head with a small gap */
+.badges {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+}
+
+/* Category: neutral slate so it never competes with status/priority color */
+.category-badge {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+.requester { background: #f3f4f6; color: #4b5563; }
+.assignee  { background: #d1fae5; color: #065f46; }
+
+/* --- ASSIGNMENT CELL + SMALL LINK BUTTONS -------------------------------- */
+.assign-cell {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.link-sm {
+  background: transparent;
+  color: #2563eb;
+  border: none;
+  padding: 2px 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.link-sm:hover { background: transparent; color: #1d4ed8; }
+
+/* Status dropdown inside a busy .ticket-meta row → compact */
+.status-select {
+  margin-left: auto;
+  padding: 4px 6px;
+  font-size: 0.82rem;
+}
+
+/* --- FORM ROW (category + priority side by side) ------------------------- */
+.form-row {
+  display: flex;
+  gap: 12px;
+}
+
+.form-row label { flex: 1; margin-bottom: 12px; }
+
+/* --- ADMIN: inline add form & category rows ------------------------------ */
+.inline-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.inline-form input { flex: 1; }
+
+.cat-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cat-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 7px;
+  background: #fafafa;
+}
+
+.cat-name { flex: 1; font-weight: 600; }
+
+.inline-input {
+  flex: 1;
+  padding: 6px 8px;
+}
+
+/* --- ADMIN: users table --------------------------------------------------- */
+.table {
+  width: 100%;
+  border-collapse: collapse; /* shared borders instead of doubled lines */
+  font-size: 0.9rem;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 8px 10px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.table th {
+  color: #6b7280;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.table tr:last-child td { border-bottom: none; }
+
+.muted { color: #9ca3af; }
+
