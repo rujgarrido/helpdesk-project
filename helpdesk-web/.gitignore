@@ -12,6 +12,12 @@ dist
 dist-ssr
 *.local
 
+# SECRETS — Vite reads .env / .env.production / .env.local; real values
+# (API keys etc.) must never be committed. Keep the empty template only.
+.env
+.env.*
+!.env.example
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

@@ -1,8 +1,13 @@
 *.log
 .DS_Store
+# SECRETS — never commit real environment files: .env holds APP_KEY,
+# DB credentials, API keys. `.env.*` catches .env.local/.env.staging/...
+# (files a future teammate might create), while the explicit negation
+# keeps the safe TEMPLATE tracked so fresh clones can copy it.
 .env
+.env.*
+!.env.example
 .env.backup
-.env.production
 .phpactor.json
 .phpunit.result.cache
 /.codex
