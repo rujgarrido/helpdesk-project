@@ -44,13 +44,30 @@ return [
     | Expiration Minutes
     |--------------------------------------------------------------------------
     |
-    | This value controls the number of minutes until an issued token will be
-    | considered expired. This will override any values set in the token's
-    | "expires_at" attribute, but first-party sessions are not affected.
+    | This value controls the number of MINUTES since a token was created
+    | until it counts as expired. The Sanctum Guard enforces this on the
+    | bearer-token path as: created_at->gt(now()->subMinutes(expiration)).
+    |
+    | OUR SETUP (H1 hardening): this is a FIXED 24h window from login with
+    | NO refresh flow — old tokens simply stop working, the client gets a
+    | 401, and the React SPA (helpdesk-web/src/api.js response interceptor)
+    | clears localStorage and routes back to the login page. Per-token
+    | "expires_at" is honoured too: the effective expiry is the EARLIER of
+    | the two. First-party (cookie/session) authentication is NOT affected
+    | — this only governs the bearer path.
+    |
+    | OVERRIDE: set SANCTUM_EXPIRATION_MINUTES in the environment to change
+    | the window (e.g. 10080 for a week). The max(1, ...) wrap is DELIBERATE
+    | fail-closed hardening: Guard treats 0/null as "never expires", so an
+    | empty or 0 env value would silently disable the control — the clamp
+    | makes that impossible.
+    |
+    | DEPLOY NOTE: run `php artisan config:clear` (or rebuild config:cache)
+    | after changing this env value — a stale cached config wins over .env.
     |
     */
 
-    'expiration' => null,
+    'expiration' => max(1, (int) env('SANCTUM_EXPIRATION_MINUTES', 1440)),
 
     /*
     |--------------------------------------------------------------------------

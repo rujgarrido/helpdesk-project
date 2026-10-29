@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "bindingId": "511564e8-0a9e-45f2-ad22-1ab307907809",
+  "generationId": "24997653-e349-4053-bfc2-a473e3f9185a",
+  "revision": 1,
+  "lifecycleState": "live",
+  "workspaceIdentity": "c:/users/asus/desktop/php/projects",
+  "planId": "default-Auth_hardening__token_expiry___throttled_auth_routes",
+  "planStructureHash": "58d8cc6d3868a5c140abfd8b289a147888999443fc7324f8c7cad88e4e077117",
+  "taskId": "1.1",
+  "ownerSessionId": "ses_e7a4095c6ffeRAiT0pgONWwe3r",
+  "ownerMessageId": "msg_187dcdc95001owcrj3rUh0Dz2p",
+  "activation": "declaration",
+  "source": "declare_scope",
+  "files": [
+    "helpdesk-api/.env.example",
+    "helpdesk-api/config/sanctum.php",
+    "helpdesk-api/routes/console.php"
+  ],
+  "declaredAt": 1793280777717,
+  "updatedAt": 1793280777717,
+  "leaseStartedAt": 1793280777717,
+  "expiresAt": 1793284377717
+}

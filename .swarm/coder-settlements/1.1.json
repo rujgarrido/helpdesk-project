@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "state": "COMMITTED",
+  "taskId": "1.1",
+  "transitionId": "coder:chatcmpl-tool-a5363d018a32dc04",
+  "actor": "ses_e7a4095c6ffeRAiT0pgONWwe3r",
+  "processId": 9372,
+  "runtimeId": "5c945a3e-951f-4fd5-8db6-96e3881cf1d7",
+  "expectedGeneration": 0,
+  "context": {
+    "declaredFiles": [
+      "helpdesk-api/.env.example",
+      "helpdesk-api/config/sanctum.php",
+      "helpdesk-api/routes/console.php"
+    ],
+    "baseline": {
+      "directory": "c:\\users\\asus\\desktop\\php\\projects\\.swarm-worktrees\\ses_e7a4095c6fferait0pgonwwe3r\\1.1",
+      "gitHead": "9f3b0a06d4a5a586bdeb946bd071754765948ba9",
+      "dirtyHash": "99d59c25e792d7742a62c65323940bc9bb3ea2706f3d807ca12c1575e6136c59",
+      "changedFiles": [],
+      "prHeadSha": null,
+      "scope": null
+    },
+    "workflowGeneration": 0
+  },
+  "worktree": {
+    "callID": "chatcmpl-tool-a5363d018a32dc04",
+    "parentSessionId": "ses_e7a4095c6ffeRAiT0pgONWwe3r",
+    "taskId": "1.1",
+    "planTaskId": "1.1",
+    "worktreePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\.swarm-worktrees\\ses_e7a4095c6ffeRAiT0pgONWwe3r\\1.1",
+    "branchName": "swarm/lane/ses_e7a4095c6ffeRAiT0pgONWwe3r/1.1",
+    "worktreeId": "1.1",
+    "worktreeSessionId": "ses_e7a4095c6ffeRAiT0pgONWwe3r",
+    "mergeStrategy": "merge",
+    "laneIndex": 1,
+    "worktreeDir": null,
+    "provisioningOwner": {
+      "reservationId": "bgcr1:29f41cdd7298a5c7f065c318b316d65c257b4f61230f66ff7a7a3fb51e93997d",
+      "generation": 1,
+      "branchName": "swarm/lane/ses_e7a4095c6ffeRAiT0pgONWwe3r/1.1"
+    }
+  },
+  "recordedAt": "2026-10-29T13:34:07.925Z",
+  "accepted": false,
+  "testEngineerExempt": false,
+  "settlementFailed": false,
+  "cleanupComplete": false
+}

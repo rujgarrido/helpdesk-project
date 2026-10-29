@@ -25,8 +25,21 @@ use Illuminate\Support\Facades\Route;
 // ---------------------------------------------------------------------------
 // PUBLIC AUTH ROUTES (no token required) — called by React src/Login.jsx
 // ---------------------------------------------------------------------------
-Route::post('/register', [AuthController::class, 'register']);
-Route::post('/login', [AuthController::class, 'login']);
+// H2 HARDENING: these two routes are the ONLY unthrottled-by-default routes
+// in this app — bootstrap/app.php never calls ->throttleApi(), so the 'api'
+// middleware group carries no rate limiter at all. We attach NAMED limiters
+// (defined in app/Providers/AppServiceProvider.php) instead of inline
+// 'throttle:6,1': inline limiter keys are sha1(domain|ip) and know nothing
+// about the request's email, so login and register would SHARE one bucket
+// and an entire office behind one NAT address would lock out together.
+// Named keys: email|ip for login, ip for register.
+// CRITICAL SYNTAX NOTE: the named limiter MUST be given exactly ONE
+// argument — 'throttle:login'. Writing 'throttle:login,1' switches
+// ThrottleRequests into inline mode and throws MissingRateLimiterException.
+Route::post('/register', [AuthController::class, 'register'])
+    ->middleware('throttle:register');
+Route::post('/login', [AuthController::class, 'login'])
+    ->middleware('throttle:login');
 
 // ---------------------------------------------------------------------------
 // PROTECTED ROUTES — every route below requires a valid Bearer token

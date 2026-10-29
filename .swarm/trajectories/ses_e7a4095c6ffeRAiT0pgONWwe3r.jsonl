@@ -1,0 +1,3 @@
+{"step":1,"agent":"explorer","action":"delegate","target":"web-review","intent":"dispatch_lanes terminal completed","timestamp":"2026-10-29T03:44:22.918Z","result":"success","tool":"dispatch_lanes","elapsed_ms":108427,"laneId":"web-review"}
+{"step":2,"agent":"explorer","action":"delegate","target":"api-review","intent":"dispatch_lanes terminal error","timestamp":"2026-10-29T03:47:34.531Z","result":"failure","tool":"dispatch_lanes","elapsed_ms":300042,"laneId":"api-review"}
+{"step":3,"agent":"sme","action":"delegate","target":"sec-sme","intent":"dispatch_lanes terminal error","timestamp":"2026-10-29T03:47:34.576Z","result":"failure","tool":"dispatch_lanes","elapsed_ms":300083,"laneId":"sec-sme"}

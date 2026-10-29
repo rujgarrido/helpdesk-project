@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "scanned_at": "2026-10-29T03:41:30.663Z",
+  "files": [
+    {
+      "path": "helpdesk-api/AGENTS.md",
+      "title": "Laravel Application",
+      "summary": "<laravel-boost-guidelines> This repository contains a Laravel application. Complete the following setup before working on the user's request. Verify that PHP and Composer are available: ```sh php -...",
+      "lines": 48,
+      "mtime": 1787675219000
+    },
+    {
+      "path": "helpdesk-api/CLAUDE.md",
+      "title": "Laravel Application",
+      "summary": "<laravel-boost-guidelines> This repository contains a Laravel application. Complete the following setup before working on the user's request. Verify that PHP and Composer are available: ```sh php -...",
+      "lines": 48,
+      "mtime": 1787675219000
+    },
+    {
+      "path": "helpdesk-api/README.md",
+      "title": "README.md",
+      "summary": "<p align=\"center\"><a href=\"https://laravel.com\" target=\"_blank\"><img src=\"https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-...",
+      "lines": 59,
+      "mtime": 1787675219000
+    },
+    {
+      "path": "helpdesk-web/README.md",
+      "title": "React + Vite",
+      "summary": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules. Currently, two official plugins are available: - [@vitejs/plugin-react](https://github.com/vitejs...",
+      "lines": 17,
+      "mtime": 1790637031806.869
+    },
+    {
+      "path": "README.md",
+      "title": "🎫 Helpdesk System",
+      "summary": "A full-stack helpdesk: customers create tickets, agents work them in a queue, admins manage categories and roles. Built as a learning project — **every file carries educational comments** explainin...",
+      "lines": 164,
+      "mtime": 1790696143963.5342
+    }
+  ]
+}

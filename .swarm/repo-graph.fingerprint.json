@@ -1,0 +1,243 @@
+{
+  "schema_version": 1,
+  "extractorStamp": "c0a0a63531076dd3a2ac38669f852c7ae7ef6d69077c658cdd66ce6991c7f848",
+  "exclusionStamp": "cceddb84f07166eb48fa3314cdb4ef68e65c367692eed22b40d7163525bc2198",
+  "files": {
+    "helpdesk-api/app/Http/Controllers/AdminUserController.php": {
+      "size": 2543,
+      "mtimeMs": 1790641946532.05
+    },
+    "helpdesk-api/app/Http/Controllers/Api/AuthController.php": {
+      "size": 5547,
+      "mtimeMs": 1790641946796.002
+    },
+    "helpdesk-api/app/Http/Controllers/CategoryController.php": {
+      "size": 3662,
+      "mtimeMs": 1790641945964.763
+    },
+    "helpdesk-api/app/Http/Controllers/Controller.php": {
+      "size": 77,
+      "mtimeMs": 1787675219000
+    },
+    "helpdesk-api/app/Http/Controllers/TicketController.php": {
+      "size": 12886,
+      "mtimeMs": 1790642009120.7405
+    },
+    "helpdesk-api/app/Http/Middleware/EnsureRole.php": {
+      "size": 2038,
+      "mtimeMs": 1790641857516.758
+    },
+    "helpdesk-api/app/Models/Category.php": {
+      "size": 1152,
+      "mtimeMs": 1790641857249.5864
+    },
+    "helpdesk-api/app/Models/Ticket.php": {
+      "size": 3417,
+      "mtimeMs": 1790641859379.218
+    },
+    "helpdesk-api/app/Models/User.php": {
+      "size": 3498,
+      "mtimeMs": 1790641858615.1482
+    },
+    "helpdesk-api/app/Providers/AppServiceProvider.php": {
+      "size": 361,
+      "mtimeMs": 1787675219000
+    },
+    "helpdesk-api/bootstrap/app.php": {
+      "size": 2187,
+      "mtimeMs": 1790641877383.0872
+    },
+    "helpdesk-api/bootstrap/cache/packages.php": {
+      "size": 963,
+      "mtimeMs": 1790610733240.8716
+    },
+    "helpdesk-api/bootstrap/cache/services.php": {
+      "size": 22575,
+      "mtimeMs": 1790610732963.7954
+    },
+    "helpdesk-api/bootstrap/providers.php": {
+      "size": 89,
+      "mtimeMs": 1787675219000
+    },
+    "helpdesk-api/config/app.php": {
+      "size": 4281,
+      "mtimeMs": 1787675219000
+    },
+    "helpdesk-api/config/auth.php": {
+      "size": 4040,
+      "mtimeMs": 1787675219000
+    },
+    "helpdesk-api/config/cache.php": {
+      "size": 4369,
+      "mtimeMs": 1787675219000
+    },
+    "helpdesk-api/config/cors.php": {
+      "size": 1578,
+      "mtimeMs": 1790636928039.9883
+    },
+    "helpdesk-api/config/database.php": {
+      "size": 6876,
+      "mtimeMs": 1787675219000
+    },
+    "helpdesk-api/config/filesystems.php": {
+      "size": 2532,
+      "mtimeMs": 1787675219000
+    },
+    "helpdesk-api/config/logging.php": {
+      "size": 4606,
+      "mtimeMs": 1787675219000
+    },
+    "helpdesk-api/config/mail.php": {
+      "size": 3631,
+      "mtimeMs": 1787675219000
+    },
+    "helpdesk-api/config/queue.php": {
+      "size": 4199,
+      "mtimeMs": 1787675219000
+    },
+    "helpdesk-api/config/sanctum.php": {
+      "size": 3105,
+      "mtimeMs": 1790610734933.5737
+    },
+    "helpdesk-api/config/services.php": {
+      "size": 1039,
+      "mtimeMs": 1787675219000
+    },
+    "helpdesk-api/config/session.php": {
+      "size": 8423,
+      "mtimeMs": 1787675219000
+    },
+    "helpdesk-api/database/factories/UserFactory.php": {
+      "size": 1044,
+      "mtimeMs": 1787675219000
+    },
+    "helpdesk-api/database/migrations/0001_01_01_000000_create_users_table.php": {
+      "size": 1473,
+      "mtimeMs": 1787675219000
+    },
+    "helpdesk-api/database/migrations/0001_01_01_000001_create_cache_table.php": {
+      "size": 873,
+      "mtimeMs": 1787675219000
+    },
+    "helpdesk-api/database/migrations/0001_01_01_000002_create_jobs_table.php": {
+      "size": 1883,
+      "mtimeMs": 1787675219000
+    },
+    "helpdesk-api/database/migrations/2026_09_28_155215_create_personal_access_tokens_table.php": {
+      "size": 863,
+      "mtimeMs": 1790610734930.577
+    },
+    "helpdesk-api/database/migrations/2026_09_28_230603_create_tickets_table.php": {
+      "size": 2291,
+      "mtimeMs": 1790636869284.026
+    },
+    "helpdesk-api/database/migrations/2026_09_29_002914_add_role_to_users_table.php": {
+      "size": 1532,
+      "mtimeMs": 1790641799533.9316
+    },
+    "helpdesk-api/database/migrations/2026_09_29_002915_create_categories_table.php": {
+      "size": 1365,
+      "mtimeMs": 1790641799819.2615
+    },
+    "helpdesk-api/database/migrations/2026_09_29_002916_add_category_and_assignee_to_tickets_table.php": {
+      "size": 2251,
+      "mtimeMs": 1790641800040.8547
+    },
+    "helpdesk-api/database/seeders/CategorySeeder.php": {
+      "size": 891,
+      "mtimeMs": 1790642039638.2566
+    },
+    "helpdesk-api/database/seeders/DatabaseSeeder.php": {
+      "size": 740,
+      "mtimeMs": 1790642040121.621
+    },
+    "helpdesk-api/package.json": {
+      "size": 461,
+      "mtimeMs": 1787675219000
+    },
+    "helpdesk-api/public/index.php": {
+      "size": 543,
+      "mtimeMs": 1787675219000
+    },
+    "helpdesk-api/resources/js/app.js": {
+      "size": 3,
+      "mtimeMs": 1787675219000
+    },
+    "helpdesk-api/resources/views/welcome.blade.php": {
+      "size": 72302,
+      "mtimeMs": 1787675219000
+    },
+    "helpdesk-api/routes/api.php": {
+      "size": 4093,
+      "mtimeMs": 1790642059462.5686
+    },
+    "helpdesk-api/routes/console.php": {
+      "size": 210,
+      "mtimeMs": 1787675219000
+    },
+    "helpdesk-api/routes/web.php": {
+      "size": 108,
+      "mtimeMs": 1787675219000
+    },
+    "helpdesk-api/storage/framework/views/c3d53a018135134fb4f3ede31f8a6ced.php": {
+      "size": 2269,
+      "mtimeMs": 1790637559522.5396
+    },
+    "helpdesk-api/storage/framework/views/da33ba61b7c459f6fed6fec9d9f60d34.php": {
+      "size": 72670,
+      "mtimeMs": 1790612365828.4128
+    },
+    "helpdesk-api/tests/Feature/ExampleTest.php": {
+      "size": 359,
+      "mtimeMs": 1787675219000
+    },
+    "helpdesk-api/tests/TestCase.php": {
+      "size": 142,
+      "mtimeMs": 1787675219000
+    },
+    "helpdesk-api/tests/Unit/ExampleTest.php": {
+      "size": 243,
+      "mtimeMs": 1787675219000
+    },
+    "helpdesk-api/vite.config.js": {
+      "size": 632,
+      "mtimeMs": 1787675219000
+    },
+    "helpdesk-web/eslint.config.js": {
+      "size": 568,
+      "mtimeMs": 1790637031779.8682
+    },
+    "helpdesk-web/package.json": {
+      "size": 669,
+      "mtimeMs": 1790637184672.399
+    },
+    "helpdesk-web/src/Admin.jsx": {
+      "size": 11715,
+      "mtimeMs": 1790642943932.2131
+    },
+    "helpdesk-web/src/api.js": {
+      "size": 3668,
+      "mtimeMs": 1790637368448.5989
+    },
+    "helpdesk-web/src/App.jsx": {
+      "size": 4258,
+      "mtimeMs": 1790642982665.739
+    },
+    "helpdesk-web/src/Login.jsx": {
+      "size": 8023,
+      "mtimeMs": 1790637478979.0884
+    },
+    "helpdesk-web/src/main.jsx": {
+      "size": 229,
+      "mtimeMs": 1790636973523.4456
+    },
+    "helpdesk-web/src/Tickets.jsx": {
+      "size": 18766,
+      "mtimeMs": 1790642943710.0784
+    },
+    "helpdesk-web/vite.config.js": {
+      "size": 161,
+      "mtimeMs": 1790636973524.4553
+    }
+  }
+}

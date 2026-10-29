@@ -1,0 +1,3931 @@
+{
+  "schema_version": "1.7.0",
+  "workspaceRoot": "C:\\Users\\Asus\\Desktop\\PHP\\projects",
+  "nodes": {
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/app/Http/Controllers/AdminUserController.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\app\\Http\\Controllers\\AdminUserController.php",
+      "moduleName": "helpdesk-api/app/Http/Controllers/AdminUserController.php",
+      "exports": [
+        "AdminUserController",
+        "App\\Http\\Controllers",
+        "index",
+        "updateRole"
+      ],
+      "exportLines": {
+        "AdminUserController": 21,
+        "App\\Http\\Controllers": 3,
+        "index": 29,
+        "updateRole": 42
+      },
+      "exportRanges": {
+        "AdminUserController": {
+          "startLine": 21,
+          "endLine": 64
+        },
+        "App\\Http\\Controllers": {
+          "startLine": 3,
+          "endLine": 3
+        },
+        "index": {
+          "startLine": 29,
+          "endLine": 34
+        },
+        "updateRole": {
+          "startLine": 42,
+          "endLine": 63
+        }
+      },
+      "exportKinds": {
+        "AdminUserController": "class",
+        "App\\Http\\Controllers": "type",
+        "index": "method",
+        "updateRole": "method"
+      },
+      "imports": [
+        "App\\Models\\User",
+        "Illuminate\\Http\\JsonResponse",
+        "Illuminate\\Http\\Request"
+      ],
+      "language": "php",
+      "mtime": "2026-09-29T00:32:26.532Z",
+      "sizeBytes": 2543,
+      "mtimeMs": 1790641946532.05,
+      "ontology": {
+        "roles": [
+          "api_route"
+        ],
+        "packageBoundary": "helpdesk-api/app",
+        "routes": [],
+        "dataOperations": [
+          {
+            "operation": "write",
+            "access": "sql",
+            "line": 60,
+            "evidence": "$user->update($validated);"
+          }
+        ],
+        "security": [
+          {
+            "kind": "input_validation",
+            "line": 53,
+            "evidence": "$validated = $request->validate([",
+            "confidence": "high"
+          },
+          {
+            "kind": "input_validation",
+            "line": 60,
+            "evidence": "$user->update($validated);",
+            "confidence": "high"
+          }
+        ],
+        "conventions": [],
+        "findings": [],
+        "links": [
+          {
+            "kind": "VALIDATES",
+            "line": 53,
+            "evidence": "$validated = $request->validate([",
+            "confidence": "high"
+          },
+          {
+            "kind": "VALIDATES",
+            "line": 60,
+            "evidence": "$user->update($validated);",
+            "confidence": "high"
+          }
+        ]
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/app/Http/Controllers/Api/AuthController.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\app\\Http\\Controllers\\Api\\AuthController.php",
+      "moduleName": "helpdesk-api/app/Http/Controllers/Api/AuthController.php",
+      "exports": [
+        "AuthController",
+        "App\\Http\\Controllers\\Api",
+        "register",
+        "login",
+        "logout",
+        "user"
+      ],
+      "exportLines": {
+        "AuthController": 21,
+        "App\\Http\\Controllers\\Api": 12,
+        "register": 29,
+        "login": 71,
+        "logout": 109,
+        "user": 123
+      },
+      "exportRanges": {
+        "AuthController": {
+          "startLine": 21,
+          "endLine": 127
+        },
+        "App\\Http\\Controllers\\Api": {
+          "startLine": 12,
+          "endLine": 12
+        },
+        "register": {
+          "startLine": 29,
+          "endLine": 66
+        },
+        "login": {
+          "startLine": 71,
+          "endLine": 100
+        },
+        "logout": {
+          "startLine": 109,
+          "endLine": 116
+        },
+        "user": {
+          "startLine": 123,
+          "endLine": 126
+        }
+      },
+      "exportKinds": {
+        "AuthController": "class",
+        "App\\Http\\Controllers\\Api": "type",
+        "register": "method",
+        "login": "method",
+        "logout": "method",
+        "user": "method"
+      },
+      "imports": [
+        "App\\Http\\Controllers\\Controller",
+        "App\\Models\\User",
+        "Illuminate\\Http\\JsonResponse",
+        "Illuminate\\Http\\Request",
+        "Illuminate\\Support\\Facades\\Hash",
+        "Illuminate\\Validation\\ValidationException"
+      ],
+      "language": "php",
+      "mtime": "2026-09-29T00:32:26.796Z",
+      "sizeBytes": 5547,
+      "mtimeMs": 1790641946796.002,
+      "ontology": {
+        "roles": [
+          "api_route"
+        ],
+        "packageBoundary": "helpdesk-api/app",
+        "routes": [],
+        "dataOperations": [
+          {
+            "operation": "write",
+            "access": "unknown",
+            "line": 43,
+            "evidence": "$user = User::create(["
+          },
+          {
+            "operation": "delete",
+            "access": "sql",
+            "line": 113,
+            "evidence": "$request->user()->currentAccessToken()->delete();"
+          }
+        ],
+        "security": [
+          {
+            "kind": "input_validation",
+            "line": 35,
+            "evidence": "$validated = $request->validate([",
+            "confidence": "high"
+          },
+          {
+            "kind": "secret_handling",
+            "line": 38,
+            "evidence": "'password' => ['required', 'string', 'min:8', 'confirmed'],",
+            "confidence": "low"
+          },
+          {
+            "kind": "input_validation",
+            "line": 44,
+            "evidence": "'name' => $validated['name'],",
+            "confidence": "high"
+          },
+          {
+            "kind": "input_validation",
+            "line": 45,
+            "evidence": "'email' => $validated['email'],",
+            "confidence": "high"
+          },
+          {
+            "kind": "input_validation",
+            "line": 46,
+            "evidence": "'password' => Hash::make($validated['password']),",
+            "confidence": "high"
+          },
+          {
+            "kind": "secret_handling",
+            "line": 46,
+            "evidence": "'password' => Hash::make($validated['password']),",
+            "confidence": "low"
+          },
+          {
+            "kind": "secret_handling",
+            "line": 59,
+            "evidence": "$token = $user->createToken('api')->plainTextToken;",
+            "confidence": "low"
+          },
+          {
+            "kind": "secret_handling",
+            "line": 64,
+            "evidence": "'token' => $token,",
+            "confidence": "low"
+          },
+          {
+            "kind": "input_validation",
+            "line": 73,
+            "evidence": "$credentials = $request->validate([",
+            "confidence": "high"
+          },
+          {
+            "kind": "secret_handling",
+            "line": 75,
+            "evidence": "'password' => ['required', 'string'],",
+            "confidence": "low"
+          },
+          {
+            "kind": "secret_handling",
+            "line": 84,
+            "evidence": "if (! $user || ! Hash::check($credentials['password'], $user->password)) {",
+            "confidence": "low"
+          },
+          {
+            "kind": "secret_handling",
+            "line": 93,
+            "evidence": "$token = $user->createToken('api')->plainTextToken;",
+            "confidence": "low"
+          },
+          {
+            "kind": "secret_handling",
+            "line": 98,
+            "evidence": "'token' => $token,",
+            "confidence": "low"
+          }
+        ],
+        "conventions": [],
+        "findings": [
+          {
+            "code": "multiple_writes_without_detected_transaction",
+            "severity": "low",
+            "message": "Multiple write/delete operations were detected without a transaction fact.",
+            "line": 43
+          }
+        ],
+        "links": [
+          {
+            "kind": "VALIDATES",
+            "line": 35,
+            "evidence": "$validated = $request->validate([",
+            "confidence": "high"
+          },
+          {
+            "kind": "VALIDATES",
+            "line": 44,
+            "evidence": "'name' => $validated['name'],",
+            "confidence": "high"
+          },
+          {
+            "kind": "VALIDATES",
+            "line": 45,
+            "evidence": "'email' => $validated['email'],",
+            "confidence": "high"
+          },
+          {
+            "kind": "VALIDATES",
+            "line": 46,
+            "evidence": "'password' => Hash::make($validated['password']),",
+            "confidence": "high"
+          },
+          {
+            "kind": "VALIDATES",
+            "line": 73,
+            "evidence": "$credentials = $request->validate([",
+            "confidence": "high"
+          }
+        ]
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/app/Http/Controllers/CategoryController.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\app\\Http\\Controllers\\CategoryController.php",
+      "moduleName": "helpdesk-api/app/Http/Controllers/CategoryController.php",
+      "exports": [
+        "CategoryController",
+        "App\\Http\\Controllers",
+        "index",
+        "store",
+        "update",
+        "destroy"
+      ],
+      "exportLines": {
+        "CategoryController": 26,
+        "App\\Http\\Controllers": 3,
+        "index": 34,
+        "store": 46,
+        "update": 64,
+        "destroy": 86
+      },
+      "exportRanges": {
+        "CategoryController": {
+          "startLine": 26,
+          "endLine": 92
+        },
+        "App\\Http\\Controllers": {
+          "startLine": 3,
+          "endLine": 3
+        },
+        "index": {
+          "startLine": 34,
+          "endLine": 37
+        },
+        "store": {
+          "startLine": 46,
+          "endLine": 55
+        },
+        "update": {
+          "startLine": 64,
+          "endLine": 76
+        },
+        "destroy": {
+          "startLine": 86,
+          "endLine": 91
+        }
+      },
+      "exportKinds": {
+        "CategoryController": "class",
+        "App\\Http\\Controllers": "type",
+        "index": "method",
+        "store": "method",
+        "update": "method",
+        "destroy": "method"
+      },
+      "imports": [
+        "App\\Models\\Category",
+        "Illuminate\\Http\\JsonResponse",
+        "Illuminate\\Http\\Request",
+        "Illuminate\\Validation\\Rule"
+      ],
+      "language": "php",
+      "mtime": "2026-09-29T00:32:25.964Z",
+      "sizeBytes": 3662,
+      "mtimeMs": 1790641945964.763,
+      "ontology": {
+        "roles": [
+          "api_route"
+        ],
+        "packageBoundary": "helpdesk-api/app",
+        "routes": [],
+        "dataOperations": [
+          {
+            "operation": "write",
+            "access": "unknown",
+            "line": 54,
+            "evidence": "return response()->json(Category::create($validated), 201);"
+          },
+          {
+            "operation": "write",
+            "access": "sql",
+            "line": 64,
+            "evidence": "public function update(Request $request, Category $category): JsonResponse"
+          },
+          {
+            "operation": "write",
+            "access": "sql",
+            "line": 73,
+            "evidence": "$category->update($validated);"
+          },
+          {
+            "operation": "delete",
+            "access": "unknown",
+            "line": 86,
+            "evidence": "public function destroy(Request $request, Category $category): JsonResponse"
+          },
+          {
+            "operation": "delete",
+            "access": "sql",
+            "line": 88,
+            "evidence": "$category->delete();"
+          }
+        ],
+        "security": [
+          {
+            "kind": "input_validation",
+            "line": 48,
+            "evidence": "$validated = $request->validate([",
+            "confidence": "high"
+          },
+          {
+            "kind": "input_validation",
+            "line": 54,
+            "evidence": "return response()->json(Category::create($validated), 201);",
+            "confidence": "high"
+          },
+          {
+            "kind": "input_validation",
+            "line": 66,
+            "evidence": "$validated = $request->validate([",
+            "confidence": "high"
+          },
+          {
+            "kind": "input_validation",
+            "line": 73,
+            "evidence": "$category->update($validated);",
+            "confidence": "high"
+          }
+        ],
+        "conventions": [],
+        "findings": [
+          {
+            "code": "multiple_writes_without_detected_transaction",
+            "severity": "low",
+            "message": "Multiple write/delete operations were detected without a transaction fact.",
+            "line": 54
+          }
+        ],
+        "links": [
+          {
+            "kind": "VALIDATES",
+            "line": 48,
+            "evidence": "$validated = $request->validate([",
+            "confidence": "high"
+          },
+          {
+            "kind": "VALIDATES",
+            "line": 54,
+            "evidence": "return response()->json(Category::create($validated), 201);",
+            "confidence": "high"
+          },
+          {
+            "kind": "VALIDATES",
+            "line": 66,
+            "evidence": "$validated = $request->validate([",
+            "confidence": "high"
+          },
+          {
+            "kind": "VALIDATES",
+            "line": 73,
+            "evidence": "$category->update($validated);",
+            "confidence": "high"
+          }
+        ]
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/app/Http/Controllers/Controller.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\app\\Http\\Controllers\\Controller.php",
+      "moduleName": "helpdesk-api/app/Http/Controllers/Controller.php",
+      "exports": [
+        "Controller",
+        "App\\Http\\Controllers"
+      ],
+      "exportLines": {
+        "Controller": 5,
+        "App\\Http\\Controllers": 3
+      },
+      "exportRanges": {
+        "Controller": {
+          "startLine": 5,
+          "endLine": 8
+        },
+        "App\\Http\\Controllers": {
+          "startLine": 3,
+          "endLine": 3
+        }
+      },
+      "exportKinds": {
+        "Controller": "class",
+        "App\\Http\\Controllers": "type"
+      },
+      "imports": [],
+      "language": "php",
+      "mtime": "2026-08-25T16:26:59.000Z",
+      "sizeBytes": 77,
+      "mtimeMs": 1787675219000,
+      "ontology": {
+        "roles": [
+          "api_route"
+        ],
+        "packageBoundary": "helpdesk-api/app",
+        "routes": [],
+        "dataOperations": [],
+        "security": [],
+        "conventions": [],
+        "findings": [],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/app/Http/Controllers/TicketController.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\app\\Http\\Controllers\\TicketController.php",
+      "moduleName": "helpdesk-api/app/Http/Controllers/TicketController.php",
+      "exports": [
+        "TicketController",
+        "App\\Http\\Controllers",
+        "index",
+        "store",
+        "show",
+        "update",
+        "destroy"
+      ],
+      "exportLines": {
+        "TicketController": 33,
+        "App\\Http\\Controllers": 3,
+        "index": 50,
+        "store": 83,
+        "show": 118,
+        "update": 141,
+        "destroy": 213
+      },
+      "exportRanges": {
+        "TicketController": {
+          "startLine": 33,
+          "endLine": 283
+        },
+        "App\\Http\\Controllers": {
+          "startLine": 3,
+          "endLine": 3
+        },
+        "index": {
+          "startLine": 50,
+          "endLine": 71
+        },
+        "store": {
+          "startLine": 83,
+          "endLine": 108
+        },
+        "show": {
+          "startLine": 118,
+          "endLine": 123
+        },
+        "update": {
+          "startLine": 141,
+          "endLine": 199
+        },
+        "destroy": {
+          "startLine": 213,
+          "endLine": 240
+        },
+        "authorizeOwnership": {
+          "startLine": 258,
+          "endLine": 263
+        },
+        "authorizeView": {
+          "startLine": 272,
+          "endLine": 281
+        }
+      },
+      "exportKinds": {
+        "TicketController": "class",
+        "App\\Http\\Controllers": "type",
+        "index": "method",
+        "store": "method",
+        "show": "method",
+        "update": "method",
+        "destroy": "method",
+        "authorizeOwnership": "method",
+        "authorizeView": "method"
+      },
+      "imports": [
+        "App\\Models\\Ticket",
+        "Illuminate\\Http\\JsonResponse",
+        "Illuminate\\Http\\Request",
+        "Illuminate\\Validation\\Rule"
+      ],
+      "language": "php",
+      "mtime": "2026-09-29T00:33:29.120Z",
+      "sizeBytes": 12886,
+      "mtimeMs": 1790642009120.7405,
+      "ontology": {
+        "roles": [
+          "api_route"
+        ],
+        "packageBoundary": "helpdesk-api/app",
+        "routes": [],
+        "dataOperations": [
+          {
+            "operation": "read",
+            "access": "unknown",
+            "line": 52,
+            "evidence": "if ($request->query('scope') === 'all') {"
+          },
+          {
+            "operation": "write",
+            "access": "unknown",
+            "line": 99,
+            "evidence": "$ticket = $request->user()->tickets()->create(["
+          },
+          {
+            "operation": "write",
+            "access": "sql",
+            "line": 141,
+            "evidence": "public function update(Request $request, Ticket $ticket): JsonResponse"
+          },
+          {
+            "operation": "write",
+            "access": "sql",
+            "line": 196,
+            "evidence": "$ticket->update($validated);"
+          },
+          {
+            "operation": "delete",
+            "access": "unknown",
+            "line": 213,
+            "evidence": "public function destroy(Request $request, Ticket $ticket): JsonResponse"
+          },
+          {
+            "operation": "delete",
+            "access": "sql",
+            "line": 218,
+            "evidence": "$ticket->delete();"
+          },
+          {
+            "operation": "delete",
+            "access": "sql",
+            "line": 225,
+            "evidence": "abort(403, 'Agents cannot delete tickets — close them instead.');"
+          },
+          {
+            "operation": "delete",
+            "access": "sql",
+            "line": 237,
+            "evidence": "$ticket->delete();"
+          }
+        ],
+        "security": [
+          {
+            "kind": "input_validation",
+            "line": 85,
+            "evidence": "$validated = $request->validate([",
+            "confidence": "high"
+          },
+          {
+            "kind": "input_validation",
+            "line": 100,
+            "evidence": "...$validated,",
+            "confidence": "high"
+          },
+          {
+            "kind": "input_validation",
+            "line": 149,
+            "evidence": "$validated = $request->validate([",
+            "confidence": "high"
+          },
+          {
+            "kind": "input_validation",
+            "line": 176,
+            "evidence": "$validated = $request->validate([",
+            "confidence": "high"
+          },
+          {
+            "kind": "input_validation",
+            "line": 191,
+            "evidence": "if (array_key_exists('assigned_to', $validated)) {",
+            "confidence": "high"
+          },
+          {
+            "kind": "input_validation",
+            "line": 192,
+            "evidence": "$ticket->assigned_to = $validated['assigned_to'];",
+            "confidence": "high"
+          },
+          {
+            "kind": "input_validation",
+            "line": 193,
+            "evidence": "unset($validated['assigned_to']);",
+            "confidence": "high"
+          },
+          {
+            "kind": "input_validation",
+            "line": 196,
+            "evidence": "$ticket->update($validated);",
+            "confidence": "high"
+          },
+          {
+            "kind": "authorization",
+            "line": 217,
+            "evidence": "if ($user->isAdmin()) {",
+            "confidence": "high"
+          }
+        ],
+        "conventions": [],
+        "findings": [
+          {
+            "code": "multiple_writes_without_detected_transaction",
+            "severity": "low",
+            "message": "Multiple write/delete operations were detected without a transaction fact.",
+            "line": 99
+          }
+        ],
+        "links": [
+          {
+            "kind": "VALIDATES",
+            "line": 85,
+            "evidence": "$validated = $request->validate([",
+            "confidence": "high"
+          },
+          {
+            "kind": "VALIDATES",
+            "line": 100,
+            "evidence": "...$validated,",
+            "confidence": "high"
+          },
+          {
+            "kind": "VALIDATES",
+            "line": 149,
+            "evidence": "$validated = $request->validate([",
+            "confidence": "high"
+          },
+          {
+            "kind": "VALIDATES",
+            "line": 176,
+            "evidence": "$validated = $request->validate([",
+            "confidence": "high"
+          },
+          {
+            "kind": "VALIDATES",
+            "line": 191,
+            "evidence": "if (array_key_exists('assigned_to', $validated)) {",
+            "confidence": "high"
+          },
+          {
+            "kind": "VALIDATES",
+            "line": 192,
+            "evidence": "$ticket->assigned_to = $validated['assigned_to'];",
+            "confidence": "high"
+          },
+          {
+            "kind": "VALIDATES",
+            "line": 193,
+            "evidence": "unset($validated['assigned_to']);",
+            "confidence": "high"
+          },
+          {
+            "kind": "VALIDATES",
+            "line": 196,
+            "evidence": "$ticket->update($validated);",
+            "confidence": "high"
+          },
+          {
+            "kind": "AUTHORIZES",
+            "line": 217,
+            "evidence": "if ($user->isAdmin()) {",
+            "confidence": "high"
+          }
+        ]
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/app/Http/Middleware/EnsureRole.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\app\\Http\\Middleware\\EnsureRole.php",
+      "moduleName": "helpdesk-api/app/Http/Middleware/EnsureRole.php",
+      "exports": [
+        "EnsureRole",
+        "App\\Http\\Middleware",
+        "handle"
+      ],
+      "exportLines": {
+        "EnsureRole": 27,
+        "App\\Http\\Middleware": 3,
+        "handle": 33
+      },
+      "exportRanges": {
+        "EnsureRole": {
+          "startLine": 27,
+          "endLine": 49
+        },
+        "App\\Http\\Middleware": {
+          "startLine": 3,
+          "endLine": 3
+        },
+        "handle": {
+          "startLine": 33,
+          "endLine": 48
+        }
+      },
+      "exportKinds": {
+        "EnsureRole": "class",
+        "App\\Http\\Middleware": "type",
+        "handle": "method"
+      },
+      "imports": [
+        "Closure",
+        "Illuminate\\Http\\Request",
+        "Symfony\\Component\\HttpFoundation\\Response"
+      ],
+      "language": "php",
+      "mtime": "2026-09-29T00:30:57.516Z",
+      "sizeBytes": 2038,
+      "mtimeMs": 1790641857516.758,
+      "ontology": {
+        "roles": [
+          "source_module"
+        ],
+        "packageBoundary": "helpdesk-api/app",
+        "routes": [],
+        "dataOperations": [],
+        "security": [],
+        "conventions": [],
+        "findings": [],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/app/Models/Category.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\app\\Models\\Category.php",
+      "moduleName": "helpdesk-api/app/Models/Category.php",
+      "exports": [
+        "Category",
+        "App\\Models",
+        "tickets"
+      ],
+      "exportLines": {
+        "Category": 14,
+        "App\\Models": 3,
+        "tickets": 30
+      },
+      "exportRanges": {
+        "Category": {
+          "startLine": 14,
+          "endLine": 34
+        },
+        "App\\Models": {
+          "startLine": 3,
+          "endLine": 3
+        },
+        "tickets": {
+          "startLine": 30,
+          "endLine": 33
+        }
+      },
+      "exportKinds": {
+        "Category": "class",
+        "App\\Models": "type",
+        "tickets": "method"
+      },
+      "imports": [
+        "Illuminate\\Database\\Eloquent\\Model",
+        "Illuminate\\Database\\Eloquent\\Relations\\HasMany"
+      ],
+      "language": "php",
+      "mtime": "2026-09-29T00:30:57.249Z",
+      "sizeBytes": 1152,
+      "mtimeMs": 1790641857249.5864,
+      "ontology": {
+        "roles": [
+          "data_module"
+        ],
+        "packageBoundary": "helpdesk-api/app",
+        "routes": [],
+        "dataOperations": [],
+        "security": [],
+        "conventions": [],
+        "findings": [],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/app/Models/Ticket.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\app\\Models\\Ticket.php",
+      "moduleName": "helpdesk-api/app/Models/Ticket.php",
+      "exports": [
+        "Ticket",
+        "App\\Models",
+        "user",
+        "category",
+        "assignee"
+      ],
+      "exportLines": {
+        "Ticket": 15,
+        "App\\Models": 3,
+        "user": 57,
+        "category": 69,
+        "assignee": 80
+      },
+      "exportRanges": {
+        "Ticket": {
+          "startLine": 15,
+          "endLine": 84
+        },
+        "App\\Models": {
+          "startLine": 3,
+          "endLine": 3
+        },
+        "user": {
+          "startLine": 57,
+          "endLine": 60
+        },
+        "category": {
+          "startLine": 69,
+          "endLine": 72
+        },
+        "assignee": {
+          "startLine": 80,
+          "endLine": 83
+        }
+      },
+      "exportKinds": {
+        "Ticket": "class",
+        "App\\Models": "type",
+        "user": "method",
+        "category": "method",
+        "assignee": "method"
+      },
+      "imports": [
+        "Illuminate\\Database\\Eloquent\\Model",
+        "Illuminate\\Database\\Eloquent\\Relations\\BelongsTo"
+      ],
+      "language": "php",
+      "mtime": "2026-09-29T00:30:59.379Z",
+      "sizeBytes": 3417,
+      "mtimeMs": 1790641859379.218,
+      "ontology": {
+        "roles": [
+          "data_module"
+        ],
+        "packageBoundary": "helpdesk-api/app",
+        "routes": [],
+        "dataOperations": [],
+        "security": [],
+        "conventions": [],
+        "findings": [],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/app/Models/User.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\app\\Models\\User.php",
+      "moduleName": "helpdesk-api/app/Models/User.php",
+      "exports": [
+        "User",
+        "App\\Models",
+        "User",
+        "casts",
+        "tickets",
+        "isAdmin",
+        "isAgent",
+        "isStaff",
+        "assignedTickets"
+      ],
+      "exportLines": {
+        "User": 24,
+        "App\\Models": 3,
+        "casts": 38,
+        "tickets": 58,
+        "isAdmin": 69,
+        "isAgent": 74,
+        "isStaff": 80,
+        "assignedTickets": 92
+      },
+      "exportRanges": {
+        "User": {
+          "startLine": 24,
+          "endLine": 96
+        },
+        "App\\Models": {
+          "startLine": 3,
+          "endLine": 3
+        },
+        "casts": {
+          "startLine": 38,
+          "endLine": 44
+        },
+        "tickets": {
+          "startLine": 58,
+          "endLine": 61
+        },
+        "isAdmin": {
+          "startLine": 69,
+          "endLine": 72
+        },
+        "isAgent": {
+          "startLine": 74,
+          "endLine": 77
+        },
+        "isStaff": {
+          "startLine": 80,
+          "endLine": 83
+        },
+        "assignedTickets": {
+          "startLine": 92,
+          "endLine": 95
+        }
+      },
+      "exportKinds": {
+        "User": "class",
+        "App\\Models": "type",
+        "casts": "method",
+        "tickets": "method",
+        "isAdmin": "method",
+        "isAgent": "method",
+        "isStaff": "method",
+        "assignedTickets": "method"
+      },
+      "imports": [
+        "Database\\Factories\\UserFactory",
+        "Illuminate\\Database\\Eloquent\\Attributes\\Fillable",
+        "Illuminate\\Database\\Eloquent\\Attributes\\Hidden",
+        "Illuminate\\Database\\Eloquent\\Factories\\HasFactory",
+        "Illuminate\\Database\\Eloquent\\Relations\\HasMany",
+        "Illuminate\\Foundation\\Auth\\User",
+        "Illuminate\\Notifications\\Notifiable",
+        "Laravel\\Sanctum\\HasApiTokens"
+      ],
+      "language": "php",
+      "mtime": "2026-09-29T00:30:58.615Z",
+      "sizeBytes": 3498,
+      "mtimeMs": 1790641858615.1482,
+      "ontology": {
+        "roles": [
+          "data_module"
+        ],
+        "packageBoundary": "helpdesk-api/app",
+        "routes": [],
+        "dataOperations": [],
+        "security": [
+          {
+            "kind": "secret_handling",
+            "line": 22,
+            "evidence": "#[Fillable(['name', 'email', 'password', 'role'])]",
+            "confidence": "low"
+          },
+          {
+            "kind": "secret_handling",
+            "line": 23,
+            "evidence": "#[Hidden(['password', 'remember_token'])]",
+            "confidence": "low"
+          },
+          {
+            "kind": "secret_handling",
+            "line": 42,
+            "evidence": "'password' => 'hashed',",
+            "confidence": "low"
+          },
+          {
+            "kind": "authorization",
+            "line": 69,
+            "evidence": "public function isAdmin(): bool",
+            "confidence": "high"
+          },
+          {
+            "kind": "authorization",
+            "line": 82,
+            "evidence": "return $this->isAgent() || $this->isAdmin();",
+            "confidence": "high"
+          }
+        ],
+        "conventions": [],
+        "findings": [],
+        "links": [
+          {
+            "kind": "AUTHORIZES",
+            "line": 69,
+            "evidence": "public function isAdmin(): bool",
+            "confidence": "high"
+          },
+          {
+            "kind": "AUTHORIZES",
+            "line": 82,
+            "evidence": "return $this->isAgent() || $this->isAdmin();",
+            "confidence": "high"
+          }
+        ]
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/app/Providers/AppServiceProvider.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\app\\Providers\\AppServiceProvider.php",
+      "moduleName": "helpdesk-api/app/Providers/AppServiceProvider.php",
+      "exports": [
+        "AppServiceProvider",
+        "App\\Providers",
+        "register",
+        "boot"
+      ],
+      "exportLines": {
+        "AppServiceProvider": 7,
+        "App\\Providers": 3,
+        "register": 12,
+        "boot": 20
+      },
+      "exportRanges": {
+        "AppServiceProvider": {
+          "startLine": 7,
+          "endLine": 24
+        },
+        "App\\Providers": {
+          "startLine": 3,
+          "endLine": 3
+        },
+        "register": {
+          "startLine": 12,
+          "endLine": 15
+        },
+        "boot": {
+          "startLine": 20,
+          "endLine": 23
+        }
+      },
+      "exportKinds": {
+        "AppServiceProvider": "class",
+        "App\\Providers": "type",
+        "register": "method",
+        "boot": "method"
+      },
+      "imports": [
+        "Illuminate\\Support\\ServiceProvider"
+      ],
+      "language": "php",
+      "mtime": "2026-08-25T16:26:59.000Z",
+      "sizeBytes": 361,
+      "mtimeMs": 1787675219000,
+      "ontology": {
+        "roles": [
+          "source_module"
+        ],
+        "packageBoundary": "helpdesk-api/app",
+        "routes": [],
+        "dataOperations": [],
+        "security": [],
+        "conventions": [],
+        "findings": [],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/bootstrap/app.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\bootstrap\\app.php",
+      "moduleName": "helpdesk-api/bootstrap/app.php",
+      "exports": [],
+      "imports": [
+        "Illuminate\\Foundation\\Application",
+        "Illuminate\\Foundation\\Configuration\\Exceptions",
+        "Illuminate\\Foundation\\Configuration\\Middleware",
+        "Illuminate\\Http\\Request"
+      ],
+      "language": "php",
+      "mtime": "2026-09-29T00:31:17.383Z",
+      "sizeBytes": 2187,
+      "mtimeMs": 1790641877383.0872,
+      "ontology": {
+        "roles": [
+          "source_module"
+        ],
+        "packageBoundary": "helpdesk-api/bootstrap",
+        "routes": [],
+        "dataOperations": [
+          {
+            "operation": "write",
+            "access": "unknown",
+            "line": 45,
+            "evidence": "})->create();"
+          }
+        ],
+        "security": [],
+        "conventions": [],
+        "findings": [],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/bootstrap/cache/packages.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\bootstrap\\cache\\packages.php",
+      "moduleName": "helpdesk-api/bootstrap/cache/packages.php",
+      "exports": [],
+      "imports": [],
+      "language": "php",
+      "mtime": "2026-09-28T15:52:13.240Z",
+      "sizeBytes": 963,
+      "mtimeMs": 1790610733240.8716,
+      "ontology": {
+        "roles": [
+          "source_module"
+        ],
+        "packageBoundary": "helpdesk-api/bootstrap",
+        "routes": [],
+        "dataOperations": [],
+        "security": [],
+        "conventions": [],
+        "findings": [],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/bootstrap/cache/services.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\bootstrap\\cache\\services.php",
+      "moduleName": "helpdesk-api/bootstrap/cache/services.php",
+      "exports": [],
+      "imports": [],
+      "language": "php",
+      "mtime": "2026-09-28T15:52:12.963Z",
+      "sizeBytes": 22575,
+      "mtimeMs": 1790610732963.7954,
+      "ontology": {
+        "roles": [
+          "source_module"
+        ],
+        "packageBoundary": "helpdesk-api/bootstrap",
+        "routes": [],
+        "dataOperations": [
+          {
+            "operation": "migration",
+            "access": "database",
+            "line": 183,
+            "evidence": "'migration.repository' => 'Illuminate\\\\Foundation\\\\Providers\\\\ConsoleSupportServiceProvider',"
+          },
+          {
+            "operation": "migration",
+            "access": "database",
+            "line": 184,
+            "evidence": "'migration.creator' => 'Illuminate\\\\Foundation\\\\Providers\\\\ConsoleSupportServiceProvider',"
+          }
+        ],
+        "security": [
+          {
+            "kind": "authentication",
+            "line": 24,
+            "evidence": "20 => 'Illuminate\\\\Session\\\\SessionServiceProvider',",
+            "confidence": "high"
+          },
+          {
+            "kind": "authentication",
+            "line": 47,
+            "evidence": "8 => 'Illuminate\\\\Session\\\\SessionServiceProvider',",
+            "confidence": "high"
+          },
+          {
+            "kind": "authentication",
+            "line": 175,
+            "evidence": "'Illuminate\\\\Session\\\\Console\\\\SessionTableCommand' => 'Illuminate\\\\Foundation\\\\Providers\\\\ConsoleSupportServiceProvider',",
+            "confidence": "high"
+          },
+          {
+            "kind": "secret_handling",
+            "line": 202,
+            "evidence": "'auth.password' => 'Illuminate\\\\Auth\\\\Passwords\\\\PasswordResetServiceProvider',",
+            "confidence": "low"
+          },
+          {
+            "kind": "secret_handling",
+            "line": 203,
+            "evidence": "'auth.password.broker' => 'Illuminate\\\\Auth\\\\Passwords\\\\PasswordResetServiceProvider',",
+            "confidence": "low"
+          }
+        ],
+        "conventions": [],
+        "findings": [
+          {
+            "code": "multiple_writes_without_detected_transaction",
+            "severity": "low",
+            "message": "Multiple write/delete operations were detected without a transaction fact.",
+            "line": 183
+          }
+        ],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/bootstrap/providers.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\bootstrap\\providers.php",
+      "moduleName": "helpdesk-api/bootstrap/providers.php",
+      "exports": [],
+      "imports": [
+        "App\\Providers\\AppServiceProvider"
+      ],
+      "language": "php",
+      "mtime": "2026-08-25T16:26:59.000Z",
+      "sizeBytes": 89,
+      "mtimeMs": 1787675219000,
+      "ontology": {
+        "roles": [
+          "source_module"
+        ],
+        "packageBoundary": "helpdesk-api/bootstrap",
+        "routes": [],
+        "dataOperations": [],
+        "security": [],
+        "conventions": [],
+        "findings": [],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/config/app.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\config\\app.php",
+      "moduleName": "helpdesk-api/config/app.php",
+      "exports": [],
+      "imports": [],
+      "language": "php",
+      "mtime": "2026-08-25T16:26:59.000Z",
+      "sizeBytes": 4281,
+      "mtimeMs": 1787675219000,
+      "ontology": {
+        "roles": [
+          "source_module"
+        ],
+        "packageBoundary": "helpdesk-api/config",
+        "routes": [],
+        "dataOperations": [],
+        "security": [],
+        "conventions": [],
+        "findings": [],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/config/auth.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\config\\auth.php",
+      "moduleName": "helpdesk-api/config/auth.php",
+      "exports": [],
+      "imports": [
+        "App\\Models\\User"
+      ],
+      "language": "php",
+      "mtime": "2026-08-25T16:26:59.000Z",
+      "sizeBytes": 4040,
+      "mtimeMs": 1787675219000,
+      "ontology": {
+        "roles": [
+          "source_module"
+        ],
+        "packageBoundary": "helpdesk-api/config",
+        "routes": [],
+        "dataOperations": [],
+        "security": [
+          {
+            "kind": "authentication",
+            "line": 42,
+            "evidence": "'driver' => 'session',",
+            "confidence": "high"
+          }
+        ],
+        "conventions": [],
+        "findings": [],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/config/cache.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\config\\cache.php",
+      "moduleName": "helpdesk-api/config/cache.php",
+      "exports": [],
+      "imports": [
+        "Illuminate\\Support\\Str"
+      ],
+      "language": "php",
+      "mtime": "2026-08-25T16:26:59.000Z",
+      "sizeBytes": 4369,
+      "mtimeMs": 1787675219000,
+      "ontology": {
+        "roles": [
+          "source_module"
+        ],
+        "packageBoundary": "helpdesk-api/config",
+        "routes": [],
+        "dataOperations": [],
+        "security": [
+          {
+            "kind": "secret_handling",
+            "line": 90,
+            "evidence": "'secret' => env('AWS_SECRET_ACCESS_KEY'),",
+            "confidence": "low"
+          }
+        ],
+        "conventions": [],
+        "findings": [],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/config/cors.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\config\\cors.php",
+      "moduleName": "helpdesk-api/config/cors.php",
+      "exports": [],
+      "imports": [],
+      "language": "php",
+      "mtime": "2026-09-28T23:08:48.039Z",
+      "sizeBytes": 1578,
+      "mtimeMs": 1790636928039.9883,
+      "ontology": {
+        "roles": [
+          "source_module"
+        ],
+        "packageBoundary": "helpdesk-api/config",
+        "routes": [],
+        "dataOperations": [],
+        "security": [
+          {
+            "kind": "csrf",
+            "line": 18,
+            "evidence": "'paths' => ['api/*', 'sanctum/csrf-cookie'],",
+            "confidence": "medium"
+          }
+        ],
+        "conventions": [],
+        "findings": [],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/config/database.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\config\\database.php",
+      "moduleName": "helpdesk-api/config/database.php",
+      "exports": [],
+      "imports": [
+        "Illuminate\\Support\\Str",
+        "Pdo\\Mysql"
+      ],
+      "language": "php",
+      "mtime": "2026-08-25T16:26:59.000Z",
+      "sizeBytes": 6876,
+      "mtimeMs": 1787675219000,
+      "ontology": {
+        "roles": [
+          "data_module"
+        ],
+        "packageBoundary": "helpdesk-api/config",
+        "routes": [],
+        "dataOperations": [],
+        "security": [
+          {
+            "kind": "secret_handling",
+            "line": 54,
+            "evidence": "'password' => env('DB_PASSWORD', ''),",
+            "confidence": "low"
+          },
+          {
+            "kind": "secret_handling",
+            "line": 74,
+            "evidence": "'password' => env('DB_PASSWORD', ''),",
+            "confidence": "low"
+          },
+          {
+            "kind": "secret_handling",
+            "line": 94,
+            "evidence": "'password' => env('DB_PASSWORD', ''),",
+            "confidence": "low"
+          },
+          {
+            "kind": "secret_handling",
+            "line": 109,
+            "evidence": "'password' => env('DB_PASSWORD', ''),",
+            "confidence": "low"
+          },
+          {
+            "kind": "secret_handling",
+            "line": 160,
+            "evidence": "'password' => env('REDIS_PASSWORD'),",
+            "confidence": "low"
+          },
+          {
+            "kind": "secret_handling",
+            "line": 173,
+            "evidence": "'password' => env('REDIS_PASSWORD'),",
+            "confidence": "low"
+          }
+        ],
+        "conventions": [],
+        "findings": [],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/config/filesystems.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\config\\filesystems.php",
+      "moduleName": "helpdesk-api/config/filesystems.php",
+      "exports": [],
+      "imports": [],
+      "language": "php",
+      "mtime": "2026-08-25T16:26:59.000Z",
+      "sizeBytes": 2532,
+      "mtimeMs": 1787675219000,
+      "ontology": {
+        "roles": [
+          "source_module"
+        ],
+        "packageBoundary": "helpdesk-api/config",
+        "routes": [],
+        "dataOperations": [],
+        "security": [
+          {
+            "kind": "secret_handling",
+            "line": 53,
+            "evidence": "'secret' => env('AWS_SECRET_ACCESS_KEY'),",
+            "confidence": "low"
+          }
+        ],
+        "conventions": [],
+        "findings": [],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/config/logging.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\config\\logging.php",
+      "moduleName": "helpdesk-api/config/logging.php",
+      "exports": [],
+      "imports": [
+        "Monolog\\Handler\\NullHandler",
+        "Monolog\\Handler\\StreamHandler",
+        "Monolog\\Handler\\SyslogUdpHandler",
+        "Monolog\\Processor\\PsrLogMessageProcessor"
+      ],
+      "language": "php",
+      "mtime": "2026-08-25T16:26:59.000Z",
+      "sizeBytes": 4606,
+      "mtimeMs": 1787675219000,
+      "ontology": {
+        "roles": [
+          "source_module"
+        ],
+        "packageBoundary": "helpdesk-api/config",
+        "routes": [],
+        "dataOperations": [],
+        "security": [],
+        "conventions": [],
+        "findings": [],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/config/mail.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\config\\mail.php",
+      "moduleName": "helpdesk-api/config/mail.php",
+      "exports": [],
+      "imports": [],
+      "language": "php",
+      "mtime": "2026-08-25T16:26:59.000Z",
+      "sizeBytes": 3631,
+      "mtimeMs": 1787675219000,
+      "ontology": {
+        "roles": [
+          "source_module"
+        ],
+        "packageBoundary": "helpdesk-api/config",
+        "routes": [],
+        "dataOperations": [],
+        "security": [
+          {
+            "kind": "secret_handling",
+            "line": 47,
+            "evidence": "'password' => env('MAIL_PASSWORD'),",
+            "confidence": "low"
+          }
+        ],
+        "conventions": [],
+        "findings": [],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/config/queue.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\config\\queue.php",
+      "moduleName": "helpdesk-api/config/queue.php",
+      "exports": [],
+      "imports": [],
+      "language": "php",
+      "mtime": "2026-08-25T16:26:59.000Z",
+      "sizeBytes": 4199,
+      "mtimeMs": 1787675219000,
+      "ontology": {
+        "roles": [
+          "data_module"
+        ],
+        "packageBoundary": "helpdesk-api/config",
+        "routes": [],
+        "dataOperations": [],
+        "security": [
+          {
+            "kind": "secret_handling",
+            "line": 59,
+            "evidence": "'secret' => env('AWS_SECRET_ACCESS_KEY'),",
+            "confidence": "low"
+          }
+        ],
+        "conventions": [],
+        "findings": [],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/config/sanctum.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\config\\sanctum.php",
+      "moduleName": "helpdesk-api/config/sanctum.php",
+      "exports": [],
+      "imports": [
+        "Illuminate\\Cookie\\Middleware\\EncryptCookies",
+        "Illuminate\\Foundation\\Http\\Middleware\\ValidateCsrfToken",
+        "Laravel\\Sanctum\\Http\\Middleware\\AuthenticateSession",
+        "Laravel\\Sanctum\\Sanctum"
+      ],
+      "language": "php",
+      "mtime": "2026-09-28T15:52:14.933Z",
+      "sizeBytes": 3105,
+      "mtimeMs": 1790610734933.5737,
+      "ontology": {
+        "roles": [
+          "source_module"
+        ],
+        "packageBoundary": "helpdesk-api/config",
+        "routes": [],
+        "dataOperations": [],
+        "security": [
+          {
+            "kind": "input_validation",
+            "line": 4,
+            "evidence": "use Illuminate\\Foundation\\Http\\Middleware\\ValidateCsrfToken;",
+            "confidence": "high"
+          },
+          {
+            "kind": "input_validation",
+            "line": 84,
+            "evidence": "'validate_csrf_token' => ValidateCsrfToken::class,",
+            "confidence": "high"
+          }
+        ],
+        "conventions": [],
+        "findings": [],
+        "links": [
+          {
+            "kind": "VALIDATES",
+            "line": 4,
+            "evidence": "use Illuminate\\Foundation\\Http\\Middleware\\ValidateCsrfToken;",
+            "confidence": "high"
+          },
+          {
+            "kind": "VALIDATES",
+            "line": 84,
+            "evidence": "'validate_csrf_token' => ValidateCsrfToken::class,",
+            "confidence": "high"
+          }
+        ]
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/config/services.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\config\\services.php",
+      "moduleName": "helpdesk-api/config/services.php",
+      "exports": [],
+      "imports": [],
+      "language": "php",
+      "mtime": "2026-08-25T16:26:59.000Z",
+      "sizeBytes": 1039,
+      "mtimeMs": 1787675219000,
+      "ontology": {
+        "roles": [
+          "source_module"
+        ],
+        "packageBoundary": "helpdesk-api/config",
+        "routes": [],
+        "dataOperations": [],
+        "security": [
+          {
+            "kind": "secret_handling",
+            "line": 27,
+            "evidence": "'secret' => env('AWS_SECRET_ACCESS_KEY'),",
+            "confidence": "low"
+          }
+        ],
+        "conventions": [],
+        "findings": [],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/config/session.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\config\\session.php",
+      "moduleName": "helpdesk-api/config/session.php",
+      "exports": [],
+      "imports": [
+        "Illuminate\\Support\\Str"
+      ],
+      "language": "php",
+      "mtime": "2026-08-25T16:26:59.000Z",
+      "sizeBytes": 8423,
+      "mtimeMs": 1787675219000,
+      "ontology": {
+        "roles": [
+          "source_module"
+        ],
+        "packageBoundary": "helpdesk-api/config",
+        "routes": [],
+        "dataOperations": [],
+        "security": [
+          {
+            "kind": "authentication",
+            "line": 132,
+            "evidence": "Str::slug((string) env('APP_NAME', 'laravel')).'-session'",
+            "confidence": "high"
+          }
+        ],
+        "conventions": [],
+        "findings": [],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/database/factories/UserFactory.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\database\\factories\\UserFactory.php",
+      "moduleName": "helpdesk-api/database/factories/UserFactory.php",
+      "exports": [
+        "UserFactory",
+        "Database\\Factories",
+        "definition",
+        "unverified"
+      ],
+      "exportLines": {
+        "UserFactory": 13,
+        "Database\\Factories": 3,
+        "definition": 25,
+        "unverified": 39
+      },
+      "exportRanges": {
+        "UserFactory": {
+          "startLine": 13,
+          "endLine": 45
+        },
+        "Database\\Factories": {
+          "startLine": 3,
+          "endLine": 3
+        },
+        "definition": {
+          "startLine": 25,
+          "endLine": 34
+        },
+        "unverified": {
+          "startLine": 39,
+          "endLine": 44
+        }
+      },
+      "exportKinds": {
+        "UserFactory": "class",
+        "Database\\Factories": "type",
+        "definition": "method",
+        "unverified": "method"
+      },
+      "imports": [
+        "App\\Models\\User",
+        "Illuminate\\Database\\Eloquent\\Factories\\Factory",
+        "Illuminate\\Support\\Facades\\Hash",
+        "Illuminate\\Support\\Str"
+      ],
+      "language": "php",
+      "mtime": "2026-08-25T16:26:59.000Z",
+      "sizeBytes": 1044,
+      "mtimeMs": 1787675219000,
+      "ontology": {
+        "roles": [
+          "data_module"
+        ],
+        "packageBoundary": "helpdesk-api/database",
+        "routes": [],
+        "dataOperations": [],
+        "security": [
+          {
+            "kind": "secret_handling",
+            "line": 18,
+            "evidence": "protected static ?string $password;",
+            "confidence": "low"
+          },
+          {
+            "kind": "secret_handling",
+            "line": 31,
+            "evidence": "'password' => static::$password ??= Hash::make('password'),",
+            "confidence": "low"
+          }
+        ],
+        "conventions": [],
+        "findings": [],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/database/migrations/0001_01_01_000000_create_users_table.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\database\\migrations\\0001_01_01_000000_create_users_table.php",
+      "moduleName": "helpdesk-api/database/migrations/0001_01_01_000000_create_users_table.php",
+      "exports": [
+        "extends",
+        "up",
+        "down"
+      ],
+      "exportLines": {
+        "extends": 7,
+        "up": 12,
+        "down": 43
+      },
+      "exportRanges": {
+        "extends": {
+          "startLine": 7,
+          "endLine": 49
+        },
+        "up": {
+          "startLine": 12,
+          "endLine": 38
+        },
+        "down": {
+          "startLine": 43,
+          "endLine": 48
+        }
+      },
+      "exportKinds": {
+        "extends": "class",
+        "up": "method",
+        "down": "method"
+      },
+      "imports": [
+        "Illuminate\\Database\\Migrations\\Migration",
+        "Illuminate\\Database\\Schema\\Blueprint",
+        "Illuminate\\Support\\Facades\\Schema"
+      ],
+      "language": "php",
+      "mtime": "2026-08-25T16:26:59.000Z",
+      "sizeBytes": 1473,
+      "mtimeMs": 1787675219000,
+      "ontology": {
+        "roles": [
+          "data_module"
+        ],
+        "packageBoundary": "helpdesk-api/database",
+        "routes": [],
+        "dataOperations": [
+          {
+            "operation": "migration",
+            "access": "database",
+            "line": 3,
+            "evidence": "use Illuminate\\Database\\Migrations\\Migration;"
+          },
+          {
+            "operation": "migration",
+            "access": "database",
+            "line": 7,
+            "evidence": "return new class extends Migration"
+          },
+          {
+            "operation": "write",
+            "access": "unknown",
+            "line": 14,
+            "evidence": "Schema::create('users', function (Blueprint $table) {"
+          },
+          {
+            "operation": "write",
+            "access": "unknown",
+            "line": 24,
+            "evidence": "Schema::create('password_reset_tokens', function (Blueprint $table) {"
+          },
+          {
+            "operation": "write",
+            "access": "unknown",
+            "line": 30,
+            "evidence": "Schema::create('sessions', function (Blueprint $table) {"
+          }
+        ],
+        "security": [
+          {
+            "kind": "secret_handling",
+            "line": 19,
+            "evidence": "$table->string('password');",
+            "confidence": "low"
+          },
+          {
+            "kind": "secret_handling",
+            "line": 26,
+            "evidence": "$table->string('token');",
+            "confidence": "low"
+          }
+        ],
+        "conventions": [],
+        "findings": [
+          {
+            "code": "multiple_writes_without_detected_transaction",
+            "severity": "low",
+            "message": "Multiple write/delete operations were detected without a transaction fact.",
+            "line": 3
+          }
+        ],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/database/migrations/0001_01_01_000001_create_cache_table.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\database\\migrations\\0001_01_01_000001_create_cache_table.php",
+      "moduleName": "helpdesk-api/database/migrations/0001_01_01_000001_create_cache_table.php",
+      "exports": [
+        "extends",
+        "up",
+        "down"
+      ],
+      "exportLines": {
+        "extends": 7,
+        "up": 12,
+        "down": 30
+      },
+      "exportRanges": {
+        "extends": {
+          "startLine": 7,
+          "endLine": 35
+        },
+        "up": {
+          "startLine": 12,
+          "endLine": 25
+        },
+        "down": {
+          "startLine": 30,
+          "endLine": 34
+        }
+      },
+      "exportKinds": {
+        "extends": "class",
+        "up": "method",
+        "down": "method"
+      },
+      "imports": [
+        "Illuminate\\Database\\Migrations\\Migration",
+        "Illuminate\\Database\\Schema\\Blueprint",
+        "Illuminate\\Support\\Facades\\Schema"
+      ],
+      "language": "php",
+      "mtime": "2026-08-25T16:26:59.000Z",
+      "sizeBytes": 873,
+      "mtimeMs": 1787675219000,
+      "ontology": {
+        "roles": [
+          "data_module"
+        ],
+        "packageBoundary": "helpdesk-api/database",
+        "routes": [],
+        "dataOperations": [
+          {
+            "operation": "migration",
+            "access": "database",
+            "line": 3,
+            "evidence": "use Illuminate\\Database\\Migrations\\Migration;"
+          },
+          {
+            "operation": "migration",
+            "access": "database",
+            "line": 7,
+            "evidence": "return new class extends Migration"
+          },
+          {
+            "operation": "write",
+            "access": "unknown",
+            "line": 14,
+            "evidence": "Schema::create('cache', function (Blueprint $table) {"
+          },
+          {
+            "operation": "write",
+            "access": "unknown",
+            "line": 20,
+            "evidence": "Schema::create('cache_locks', function (Blueprint $table) {"
+          }
+        ],
+        "security": [],
+        "conventions": [],
+        "findings": [
+          {
+            "code": "multiple_writes_without_detected_transaction",
+            "severity": "low",
+            "message": "Multiple write/delete operations were detected without a transaction fact.",
+            "line": 3
+          }
+        ],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/database/migrations/0001_01_01_000002_create_jobs_table.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\database\\migrations\\0001_01_01_000002_create_jobs_table.php",
+      "moduleName": "helpdesk-api/database/migrations/0001_01_01_000002_create_jobs_table.php",
+      "exports": [
+        "extends",
+        "up",
+        "down"
+      ],
+      "exportLines": {
+        "extends": 7,
+        "up": 12,
+        "down": 53
+      },
+      "exportRanges": {
+        "extends": {
+          "startLine": 7,
+          "endLine": 59
+        },
+        "up": {
+          "startLine": 12,
+          "endLine": 48
+        },
+        "down": {
+          "startLine": 53,
+          "endLine": 58
+        }
+      },
+      "exportKinds": {
+        "extends": "class",
+        "up": "method",
+        "down": "method"
+      },
+      "imports": [
+        "Illuminate\\Database\\Migrations\\Migration",
+        "Illuminate\\Database\\Schema\\Blueprint",
+        "Illuminate\\Support\\Facades\\Schema"
+      ],
+      "language": "php",
+      "mtime": "2026-08-25T16:26:59.000Z",
+      "sizeBytes": 1883,
+      "mtimeMs": 1787675219000,
+      "ontology": {
+        "roles": [
+          "data_module"
+        ],
+        "packageBoundary": "helpdesk-api/database",
+        "routes": [],
+        "dataOperations": [
+          {
+            "operation": "migration",
+            "access": "database",
+            "line": 3,
+            "evidence": "use Illuminate\\Database\\Migrations\\Migration;"
+          },
+          {
+            "operation": "migration",
+            "access": "database",
+            "line": 7,
+            "evidence": "return new class extends Migration"
+          },
+          {
+            "operation": "write",
+            "access": "unknown",
+            "line": 14,
+            "evidence": "Schema::create('jobs', function (Blueprint $table) {"
+          },
+          {
+            "operation": "write",
+            "access": "unknown",
+            "line": 24,
+            "evidence": "Schema::create('job_batches', function (Blueprint $table) {"
+          },
+          {
+            "operation": "write",
+            "access": "unknown",
+            "line": 37,
+            "evidence": "Schema::create('failed_jobs', function (Blueprint $table) {"
+          }
+        ],
+        "security": [],
+        "conventions": [],
+        "findings": [
+          {
+            "code": "multiple_writes_without_detected_transaction",
+            "severity": "low",
+            "message": "Multiple write/delete operations were detected without a transaction fact.",
+            "line": 3
+          }
+        ],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/database/migrations/2026_09_28_155215_create_personal_access_tokens_table.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\database\\migrations\\2026_09_28_155215_create_personal_access_tokens_table.php",
+      "moduleName": "helpdesk-api/database/migrations/2026_09_28_155215_create_personal_access_tokens_table.php",
+      "exports": [
+        "extends",
+        "up",
+        "down"
+      ],
+      "exportLines": {
+        "extends": 7,
+        "up": 12,
+        "down": 29
+      },
+      "exportRanges": {
+        "extends": {
+          "startLine": 7,
+          "endLine": 33
+        },
+        "up": {
+          "startLine": 12,
+          "endLine": 24
+        },
+        "down": {
+          "startLine": 29,
+          "endLine": 32
+        }
+      },
+      "exportKinds": {
+        "extends": "class",
+        "up": "method",
+        "down": "method"
+      },
+      "imports": [
+        "Illuminate\\Database\\Migrations\\Migration",
+        "Illuminate\\Database\\Schema\\Blueprint",
+        "Illuminate\\Support\\Facades\\Schema"
+      ],
+      "language": "php",
+      "mtime": "2026-09-28T15:52:14.930Z",
+      "sizeBytes": 863,
+      "mtimeMs": 1790610734930.577,
+      "ontology": {
+        "roles": [
+          "data_module"
+        ],
+        "packageBoundary": "helpdesk-api/database",
+        "routes": [],
+        "dataOperations": [
+          {
+            "operation": "migration",
+            "access": "database",
+            "line": 3,
+            "evidence": "use Illuminate\\Database\\Migrations\\Migration;"
+          },
+          {
+            "operation": "migration",
+            "access": "database",
+            "line": 7,
+            "evidence": "return new class extends Migration"
+          },
+          {
+            "operation": "write",
+            "access": "unknown",
+            "line": 14,
+            "evidence": "Schema::create('personal_access_tokens', function (Blueprint $table) {"
+          }
+        ],
+        "security": [
+          {
+            "kind": "secret_handling",
+            "line": 18,
+            "evidence": "$table->string('token', 64)->unique();",
+            "confidence": "low"
+          }
+        ],
+        "conventions": [],
+        "findings": [
+          {
+            "code": "multiple_writes_without_detected_transaction",
+            "severity": "low",
+            "message": "Multiple write/delete operations were detected without a transaction fact.",
+            "line": 3
+          }
+        ],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/database/migrations/2026_09_28_230603_create_tickets_table.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\database\\migrations\\2026_09_28_230603_create_tickets_table.php",
+      "moduleName": "helpdesk-api/database/migrations/2026_09_28_230603_create_tickets_table.php",
+      "exports": [
+        "extends",
+        "up",
+        "down"
+      ],
+      "exportLines": {
+        "extends": 7,
+        "up": 17,
+        "down": 56
+      },
+      "exportRanges": {
+        "extends": {
+          "startLine": 7,
+          "endLine": 60
+        },
+        "up": {
+          "startLine": 17,
+          "endLine": 49
+        },
+        "down": {
+          "startLine": 56,
+          "endLine": 59
+        }
+      },
+      "exportKinds": {
+        "extends": "class",
+        "up": "method",
+        "down": "method"
+      },
+      "imports": [
+        "Illuminate\\Database\\Migrations\\Migration",
+        "Illuminate\\Database\\Schema\\Blueprint",
+        "Illuminate\\Support\\Facades\\Schema"
+      ],
+      "language": "php",
+      "mtime": "2026-09-28T23:07:49.284Z",
+      "sizeBytes": 2291,
+      "mtimeMs": 1790636869284.026,
+      "ontology": {
+        "roles": [
+          "data_module"
+        ],
+        "packageBoundary": "helpdesk-api/database",
+        "routes": [],
+        "dataOperations": [
+          {
+            "operation": "migration",
+            "access": "database",
+            "line": 3,
+            "evidence": "use Illuminate\\Database\\Migrations\\Migration;"
+          },
+          {
+            "operation": "migration",
+            "access": "database",
+            "line": 7,
+            "evidence": "return new class extends Migration"
+          },
+          {
+            "operation": "write",
+            "access": "unknown",
+            "line": 19,
+            "evidence": "Schema::create('tickets', function (Blueprint $table) {"
+          }
+        ],
+        "security": [],
+        "conventions": [],
+        "findings": [
+          {
+            "code": "multiple_writes_without_detected_transaction",
+            "severity": "low",
+            "message": "Multiple write/delete operations were detected without a transaction fact.",
+            "line": 3
+          }
+        ],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/database/migrations/2026_09_29_002914_add_role_to_users_table.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\database\\migrations\\2026_09_29_002914_add_role_to_users_table.php",
+      "moduleName": "helpdesk-api/database/migrations/2026_09_29_002914_add_role_to_users_table.php",
+      "exports": [
+        "extends",
+        "up",
+        "down"
+      ],
+      "exportLines": {
+        "extends": 7,
+        "up": 19,
+        "down": 36
+      },
+      "exportRanges": {
+        "extends": {
+          "startLine": 7,
+          "endLine": 42
+        },
+        "up": {
+          "startLine": 19,
+          "endLine": 30
+        },
+        "down": {
+          "startLine": 36,
+          "endLine": 41
+        }
+      },
+      "exportKinds": {
+        "extends": "class",
+        "up": "method",
+        "down": "method"
+      },
+      "imports": [
+        "Illuminate\\Database\\Migrations\\Migration",
+        "Illuminate\\Database\\Schema\\Blueprint",
+        "Illuminate\\Support\\Facades\\Schema"
+      ],
+      "language": "php",
+      "mtime": "2026-09-29T00:29:59.533Z",
+      "sizeBytes": 1532,
+      "mtimeMs": 1790641799533.9316,
+      "ontology": {
+        "roles": [
+          "data_module"
+        ],
+        "packageBoundary": "helpdesk-api/database",
+        "routes": [],
+        "dataOperations": [
+          {
+            "operation": "migration",
+            "access": "database",
+            "line": 3,
+            "evidence": "use Illuminate\\Database\\Migrations\\Migration;"
+          },
+          {
+            "operation": "migration",
+            "access": "database",
+            "line": 7,
+            "evidence": "return new class extends Migration"
+          }
+        ],
+        "security": [],
+        "conventions": [],
+        "findings": [
+          {
+            "code": "multiple_writes_without_detected_transaction",
+            "severity": "low",
+            "message": "Multiple write/delete operations were detected without a transaction fact.",
+            "line": 3
+          }
+        ],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/database/migrations/2026_09_29_002915_create_categories_table.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\database\\migrations\\2026_09_29_002915_create_categories_table.php",
+      "moduleName": "helpdesk-api/database/migrations/2026_09_29_002915_create_categories_table.php",
+      "exports": [
+        "extends",
+        "up",
+        "down"
+      ],
+      "exportLines": {
+        "extends": 7,
+        "up": 18,
+        "down": 38
+      },
+      "exportRanges": {
+        "extends": {
+          "startLine": 7,
+          "endLine": 42
+        },
+        "up": {
+          "startLine": 18,
+          "endLine": 30
+        },
+        "down": {
+          "startLine": 38,
+          "endLine": 41
+        }
+      },
+      "exportKinds": {
+        "extends": "class",
+        "up": "method",
+        "down": "method"
+      },
+      "imports": [
+        "Illuminate\\Database\\Migrations\\Migration",
+        "Illuminate\\Database\\Schema\\Blueprint",
+        "Illuminate\\Support\\Facades\\Schema"
+      ],
+      "language": "php",
+      "mtime": "2026-09-29T00:29:59.819Z",
+      "sizeBytes": 1365,
+      "mtimeMs": 1790641799819.2615,
+      "ontology": {
+        "roles": [
+          "data_module"
+        ],
+        "packageBoundary": "helpdesk-api/database",
+        "routes": [],
+        "dataOperations": [
+          {
+            "operation": "migration",
+            "access": "database",
+            "line": 3,
+            "evidence": "use Illuminate\\Database\\Migrations\\Migration;"
+          },
+          {
+            "operation": "migration",
+            "access": "database",
+            "line": 7,
+            "evidence": "return new class extends Migration"
+          },
+          {
+            "operation": "write",
+            "access": "unknown",
+            "line": 20,
+            "evidence": "Schema::create('categories', function (Blueprint $table) {"
+          }
+        ],
+        "security": [],
+        "conventions": [],
+        "findings": [
+          {
+            "code": "multiple_writes_without_detected_transaction",
+            "severity": "low",
+            "message": "Multiple write/delete operations were detected without a transaction fact.",
+            "line": 3
+          }
+        ],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/database/migrations/2026_09_29_002916_add_category_and_assignee_to_tickets_table.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\database\\migrations\\2026_09_29_002916_add_category_and_assignee_to_tickets_table.php",
+      "moduleName": "helpdesk-api/database/migrations/2026_09_29_002916_add_category_and_assignee_to_tickets_table.php",
+      "exports": [
+        "extends",
+        "up",
+        "down"
+      ],
+      "exportLines": {
+        "extends": 7,
+        "up": 19,
+        "down": 51
+      },
+      "exportRanges": {
+        "extends": {
+          "startLine": 7,
+          "endLine": 58
+        },
+        "up": {
+          "startLine": 19,
+          "endLine": 43
+        },
+        "down": {
+          "startLine": 51,
+          "endLine": 57
+        }
+      },
+      "exportKinds": {
+        "extends": "class",
+        "up": "method",
+        "down": "method"
+      },
+      "imports": [
+        "Illuminate\\Database\\Migrations\\Migration",
+        "Illuminate\\Database\\Schema\\Blueprint",
+        "Illuminate\\Support\\Facades\\Schema"
+      ],
+      "language": "php",
+      "mtime": "2026-09-29T00:30:00.040Z",
+      "sizeBytes": 2251,
+      "mtimeMs": 1790641800040.8547,
+      "ontology": {
+        "roles": [
+          "data_module"
+        ],
+        "packageBoundary": "helpdesk-api/database",
+        "routes": [],
+        "dataOperations": [
+          {
+            "operation": "migration",
+            "access": "database",
+            "line": 3,
+            "evidence": "use Illuminate\\Database\\Migrations\\Migration;"
+          },
+          {
+            "operation": "migration",
+            "access": "database",
+            "line": 7,
+            "evidence": "return new class extends Migration"
+          }
+        ],
+        "security": [],
+        "conventions": [],
+        "findings": [
+          {
+            "code": "multiple_writes_without_detected_transaction",
+            "severity": "low",
+            "message": "Multiple write/delete operations were detected without a transaction fact.",
+            "line": 3
+          }
+        ],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/database/seeders/CategorySeeder.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\database\\seeders\\CategorySeeder.php",
+      "moduleName": "helpdesk-api/database/seeders/CategorySeeder.php",
+      "exports": [
+        "CategorySeeder",
+        "Database\\Seeders",
+        "run"
+      ],
+      "exportLines": {
+        "CategorySeeder": 16,
+        "Database\\Seeders": 3,
+        "run": 18
+      },
+      "exportRanges": {
+        "CategorySeeder": {
+          "startLine": 16,
+          "endLine": 27
+        },
+        "Database\\Seeders": {
+          "startLine": 3,
+          "endLine": 3
+        },
+        "run": {
+          "startLine": 18,
+          "endLine": 26
+        }
+      },
+      "exportKinds": {
+        "CategorySeeder": "class",
+        "Database\\Seeders": "type",
+        "run": "method"
+      },
+      "imports": [
+        "App\\Models\\Category",
+        "Illuminate\\Database\\Seeder"
+      ],
+      "language": "php",
+      "mtime": "2026-09-29T00:33:59.638Z",
+      "sizeBytes": 891,
+      "mtimeMs": 1790642039638.2566,
+      "ontology": {
+        "roles": [
+          "data_module"
+        ],
+        "packageBoundary": "helpdesk-api/database",
+        "routes": [],
+        "dataOperations": [],
+        "security": [],
+        "conventions": [],
+        "findings": [],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/database/seeders/DatabaseSeeder.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\database\\seeders\\DatabaseSeeder.php",
+      "moduleName": "helpdesk-api/database/seeders/DatabaseSeeder.php",
+      "exports": [
+        "DatabaseSeeder",
+        "Database\\Seeders",
+        "run"
+      ],
+      "exportLines": {
+        "DatabaseSeeder": 9,
+        "Database\\Seeders": 3,
+        "run": 16
+      },
+      "exportRanges": {
+        "DatabaseSeeder": {
+          "startLine": 9,
+          "endLine": 30
+        },
+        "Database\\Seeders": {
+          "startLine": 3,
+          "endLine": 3
+        },
+        "run": {
+          "startLine": 16,
+          "endLine": 29
+        }
+      },
+      "exportKinds": {
+        "DatabaseSeeder": "class",
+        "Database\\Seeders": "type",
+        "run": "method"
+      },
+      "imports": [
+        "App\\Models\\User",
+        "Illuminate\\Database\\Console\\Seeds\\WithoutModelEvents",
+        "Illuminate\\Database\\Seeder"
+      ],
+      "language": "php",
+      "mtime": "2026-09-29T00:34:00.121Z",
+      "sizeBytes": 740,
+      "mtimeMs": 1790642040121.621,
+      "ontology": {
+        "roles": [
+          "data_module"
+        ],
+        "packageBoundary": "helpdesk-api/database",
+        "routes": [],
+        "dataOperations": [
+          {
+            "operation": "write",
+            "access": "unknown",
+            "line": 25,
+            "evidence": "User::factory()->create(["
+          }
+        ],
+        "security": [],
+        "conventions": [],
+        "findings": [],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/public/index.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\public\\index.php",
+      "moduleName": "helpdesk-api/public/index.php",
+      "exports": [],
+      "imports": [
+        "Illuminate\\Foundation\\Application",
+        "Illuminate\\Http\\Request"
+      ],
+      "language": "php",
+      "mtime": "2026-08-25T16:26:59.000Z",
+      "sizeBytes": 543,
+      "mtimeMs": 1787675219000,
+      "ontology": {
+        "roles": [
+          "source_module"
+        ],
+        "packageBoundary": "helpdesk-api/public",
+        "routes": [],
+        "dataOperations": [],
+        "security": [],
+        "conventions": [],
+        "findings": [],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/resources/js/app.js": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\resources\\js\\app.js",
+      "moduleName": "helpdesk-api/resources/js/app.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-08-25T16:26:59.000Z",
+      "sizeBytes": 3,
+      "mtimeMs": 1787675219000,
+      "ontology": {
+        "roles": [
+          "source_module"
+        ],
+        "packageBoundary": "helpdesk-api/resources",
+        "routes": [],
+        "dataOperations": [],
+        "security": [],
+        "conventions": [],
+        "findings": [],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/resources/views/welcome.blade.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\resources\\views\\welcome.blade.php",
+      "moduleName": "helpdesk-api/resources/views/welcome.blade.php",
+      "exports": [],
+      "imports": [],
+      "language": "php",
+      "mtime": "2026-08-25T16:26:59.000Z",
+      "sizeBytes": 72302,
+      "mtimeMs": 1787675219000,
+      "ontology": {
+        "roles": [
+          "source_module"
+        ],
+        "packageBoundary": "helpdesk-api/resources",
+        "routes": [],
+        "dataOperations": [
+          {
+            "operation": "read",
+            "access": "sql",
+            "line": 16,
+            "evidence": "@layer properties{@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))){*,:before,"
+          }
+        ],
+        "security": [],
+        "conventions": [],
+        "findings": [],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/routes/api.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\routes\\api.php",
+      "moduleName": "helpdesk-api/routes/api.php",
+      "exports": [],
+      "imports": [
+        "App\\Http\\Controllers\\AdminUserController",
+        "App\\Http\\Controllers\\Api\\AuthController",
+        "App\\Http\\Controllers\\CategoryController",
+        "App\\Http\\Controllers\\TicketController",
+        "Illuminate\\Http\\Request",
+        "Illuminate\\Support\\Facades\\Route"
+      ],
+      "language": "php",
+      "mtime": "2026-09-29T00:34:19.462Z",
+      "sizeBytes": 4093,
+      "mtimeMs": 1790642059462.5686,
+      "ontology": {
+        "roles": [
+          "api_route"
+        ],
+        "packageBoundary": "helpdesk-api/routes",
+        "routes": [],
+        "dataOperations": [
+          {
+            "operation": "write",
+            "access": "sql",
+            "line": 67,
+            "evidence": "Route::patch('/categories/{category}', [CategoryController::class, 'update']);"
+          },
+          {
+            "operation": "delete",
+            "access": "sql",
+            "line": 68,
+            "evidence": "Route::delete('/categories/{category}', [CategoryController::class, 'destroy']);"
+          },
+          {
+            "operation": "write",
+            "access": "unknown",
+            "line": 72,
+            "evidence": "Route::patch('/users/{user}/role', [AdminUserController::class, 'updateRole']);"
+          }
+        ],
+        "security": [],
+        "conventions": [],
+        "findings": [
+          {
+            "code": "multiple_writes_without_detected_transaction",
+            "severity": "low",
+            "message": "Multiple write/delete operations were detected without a transaction fact.",
+            "line": 67
+          }
+        ],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/routes/console.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\routes\\console.php",
+      "moduleName": "helpdesk-api/routes/console.php",
+      "exports": [],
+      "imports": [
+        "Illuminate\\Foundation\\Inspiring",
+        "Illuminate\\Support\\Facades\\Artisan"
+      ],
+      "language": "php",
+      "mtime": "2026-08-25T16:26:59.000Z",
+      "sizeBytes": 210,
+      "mtimeMs": 1787675219000,
+      "ontology": {
+        "roles": [
+          "api_route"
+        ],
+        "packageBoundary": "helpdesk-api/routes",
+        "routes": [],
+        "dataOperations": [],
+        "security": [],
+        "conventions": [],
+        "findings": [],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/routes/web.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\routes\\web.php",
+      "moduleName": "helpdesk-api/routes/web.php",
+      "exports": [],
+      "imports": [
+        "Illuminate\\Support\\Facades\\Route"
+      ],
+      "language": "php",
+      "mtime": "2026-08-25T16:26:59.000Z",
+      "sizeBytes": 108,
+      "mtimeMs": 1787675219000,
+      "ontology": {
+        "roles": [
+          "api_route"
+        ],
+        "packageBoundary": "helpdesk-api/routes",
+        "routes": [],
+        "dataOperations": [],
+        "security": [],
+        "conventions": [],
+        "findings": [],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/storage/framework/views/c3d53a018135134fb4f3ede31f8a6ced.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\storage\\framework\\views\\c3d53a018135134fb4f3ede31f8a6ced.php",
+      "moduleName": "helpdesk-api/storage/framework/views/c3d53a018135134fb4f3ede31f8a6ced.php",
+      "exports": [],
+      "imports": [],
+      "language": "php",
+      "mtime": "2026-09-28T23:19:19.522Z",
+      "sizeBytes": 2269,
+      "mtimeMs": 1790637559522.5396,
+      "ontology": {
+        "roles": [
+          "source_module"
+        ],
+        "packageBoundary": "helpdesk-api/storage",
+        "routes": [],
+        "dataOperations": [],
+        "security": [],
+        "conventions": [],
+        "findings": [],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/storage/framework/views/da33ba61b7c459f6fed6fec9d9f60d34.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\storage\\framework\\views\\da33ba61b7c459f6fed6fec9d9f60d34.php",
+      "moduleName": "helpdesk-api/storage/framework/views/da33ba61b7c459f6fed6fec9d9f60d34.php",
+      "exports": [],
+      "imports": [],
+      "language": "php",
+      "mtime": "2026-09-28T16:19:25.828Z",
+      "sizeBytes": 72670,
+      "mtimeMs": 1790612365828.4128,
+      "ontology": {
+        "roles": [
+          "source_module"
+        ],
+        "packageBoundary": "helpdesk-api/storage",
+        "routes": [],
+        "dataOperations": [
+          {
+            "operation": "read",
+            "access": "sql",
+            "line": 16,
+            "evidence": "@layer properties{@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))){*,:before,"
+          }
+        ],
+        "security": [],
+        "conventions": [],
+        "findings": [],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/tests/Feature/ExampleTest.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\tests\\Feature\\ExampleTest.php",
+      "moduleName": "helpdesk-api/tests/Feature/ExampleTest.php",
+      "exports": [
+        "ExampleTest",
+        "Tests\\Feature",
+        "test_the_application_returns_a_successful_response"
+      ],
+      "exportLines": {
+        "ExampleTest": 8,
+        "Tests\\Feature": 3,
+        "test_the_application_returns_a_successful_response": 13
+      },
+      "exportRanges": {
+        "ExampleTest": {
+          "startLine": 8,
+          "endLine": 19
+        },
+        "Tests\\Feature": {
+          "startLine": 3,
+          "endLine": 3
+        },
+        "test_the_application_returns_a_successful_response": {
+          "startLine": 13,
+          "endLine": 18
+        }
+      },
+      "exportKinds": {
+        "ExampleTest": "class",
+        "Tests\\Feature": "type",
+        "test_the_application_returns_a_successful_response": "method"
+      },
+      "imports": [
+        "Tests\\TestCase"
+      ],
+      "language": "php",
+      "mtime": "2026-08-25T16:26:59.000Z",
+      "sizeBytes": 359,
+      "mtimeMs": 1787675219000,
+      "ontology": {
+        "roles": [
+          "test_file"
+        ],
+        "packageBoundary": "helpdesk-api/tests",
+        "routes": [],
+        "dataOperations": [],
+        "security": [],
+        "conventions": [
+          {
+            "name": "test_file_naming",
+            "evidence": "ExampleTest.php matches test/spec naming"
+          }
+        ],
+        "findings": [],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/tests/TestCase.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\tests\\TestCase.php",
+      "moduleName": "helpdesk-api/tests/TestCase.php",
+      "exports": [
+        "TestCase",
+        "Tests"
+      ],
+      "exportLines": {
+        "TestCase": 7,
+        "Tests": 3
+      },
+      "exportRanges": {
+        "TestCase": {
+          "startLine": 7,
+          "endLine": 10
+        },
+        "Tests": {
+          "startLine": 3,
+          "endLine": 3
+        }
+      },
+      "exportKinds": {
+        "TestCase": "class",
+        "Tests": "type"
+      },
+      "imports": [
+        "Illuminate\\Foundation\\Testing\\TestCase"
+      ],
+      "language": "php",
+      "mtime": "2026-08-25T16:26:59.000Z",
+      "sizeBytes": 142,
+      "mtimeMs": 1787675219000,
+      "ontology": {
+        "roles": [
+          "test_file"
+        ],
+        "packageBoundary": "helpdesk-api/tests",
+        "routes": [],
+        "dataOperations": [],
+        "security": [],
+        "conventions": [
+          {
+            "name": "test_file_naming",
+            "evidence": "TestCase.php matches test/spec naming"
+          }
+        ],
+        "findings": [],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/tests/Unit/ExampleTest.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\tests\\Unit\\ExampleTest.php",
+      "moduleName": "helpdesk-api/tests/Unit/ExampleTest.php",
+      "exports": [
+        "ExampleTest",
+        "Tests\\Unit",
+        "test_that_true_is_true"
+      ],
+      "exportLines": {
+        "ExampleTest": 7,
+        "Tests\\Unit": 3,
+        "test_that_true_is_true": 12
+      },
+      "exportRanges": {
+        "ExampleTest": {
+          "startLine": 7,
+          "endLine": 16
+        },
+        "Tests\\Unit": {
+          "startLine": 3,
+          "endLine": 3
+        },
+        "test_that_true_is_true": {
+          "startLine": 12,
+          "endLine": 15
+        }
+      },
+      "exportKinds": {
+        "ExampleTest": "class",
+        "Tests\\Unit": "type",
+        "test_that_true_is_true": "method"
+      },
+      "imports": [
+        "PHPUnit\\Framework\\TestCase"
+      ],
+      "language": "php",
+      "mtime": "2026-08-25T16:26:59.000Z",
+      "sizeBytes": 243,
+      "mtimeMs": 1787675219000,
+      "ontology": {
+        "roles": [
+          "test_file"
+        ],
+        "packageBoundary": "helpdesk-api/tests",
+        "routes": [],
+        "dataOperations": [],
+        "security": [],
+        "conventions": [
+          {
+            "name": "test_file_naming",
+            "evidence": "ExampleTest.php matches test/spec naming"
+          }
+        ],
+        "findings": [],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/vite.config.js": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\vite.config.js",
+      "moduleName": "helpdesk-api/vite.config.js",
+      "exports": [
+        "default"
+      ],
+      "exportLines": {
+        "default": 6
+      },
+      "exportRanges": {
+        "default": {
+          "startLine": 6,
+          "endLine": 24
+        }
+      },
+      "exportKinds": {
+        "default": "function"
+      },
+      "imports": [
+        "vite",
+        "laravel-vite-plugin",
+        "laravel-vite-plugin/fonts",
+        "@tailwindcss/vite"
+      ],
+      "language": "javascript",
+      "mtime": "2026-08-25T16:26:59.000Z",
+      "sizeBytes": 632,
+      "mtimeMs": 1787675219000,
+      "ontology": {
+        "roles": [
+          "source_module"
+        ],
+        "packageBoundary": "helpdesk-api/vite.config.js",
+        "routes": [],
+        "dataOperations": [],
+        "security": [],
+        "conventions": [],
+        "findings": [],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-web/eslint.config.js": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-web\\eslint.config.js",
+      "moduleName": "helpdesk-web/eslint.config.js",
+      "exports": [
+        "default"
+      ],
+      "exportLines": {
+        "default": 7
+      },
+      "exportRanges": {
+        "default": {
+          "startLine": 7,
+          "endLine": 21
+        }
+      },
+      "exportKinds": {
+        "default": "function"
+      },
+      "imports": [
+        "@eslint/js",
+        "globals",
+        "eslint-plugin-react-hooks",
+        "eslint-plugin-react-refresh",
+        "eslint/config"
+      ],
+      "language": "javascript",
+      "mtime": "2026-09-28T23:10:31.779Z",
+      "sizeBytes": 568,
+      "mtimeMs": 1790637031779.8682,
+      "ontology": {
+        "roles": [
+          "source_module"
+        ],
+        "packageBoundary": "helpdesk-web/eslint.config.js",
+        "routes": [],
+        "dataOperations": [],
+        "security": [],
+        "conventions": [],
+        "findings": [],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-web/src/Admin.jsx": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-web\\src\\Admin.jsx",
+      "moduleName": "helpdesk-web/src/Admin.jsx",
+      "exports": [
+        "default"
+      ],
+      "exportLines": {
+        "default": 304
+      },
+      "exportRanges": {
+        "default": {
+          "startLine": 304,
+          "endLine": 304
+        }
+      },
+      "exportKinds": {
+        "default": "function"
+      },
+      "imports": [
+        "react",
+        "react-router-dom",
+        "./api"
+      ],
+      "language": "javascript",
+      "mtime": "2026-09-29T00:49:03.932Z",
+      "sizeBytes": 11715,
+      "mtimeMs": 1790642943932.2131,
+      "ontology": {
+        "roles": [
+          "source_module"
+        ],
+        "packageBoundary": "helpdesk-web/src",
+        "routes": [],
+        "dataOperations": [
+          {
+            "operation": "write",
+            "access": "unknown",
+            "line": 97,
+            "evidence": "const { data } = await api.patch(`/categories/${id}`, { name: editName });"
+          },
+          {
+            "operation": "delete",
+            "access": "sql",
+            "line": 117,
+            "evidence": "await api.delete(`/categories/${id}`);"
+          },
+          {
+            "operation": "delete",
+            "access": "sql",
+            "line": 120,
+            "evidence": "setError(err.response?.data?.message || 'Could not delete category.');"
+          },
+          {
+            "operation": "write",
+            "access": "unknown",
+            "line": 131,
+            "evidence": "const { data } = await api.patch(`/users/${user.id}/role`, { role });"
+          },
+          {
+            "operation": "read",
+            "access": "sql",
+            "line": 275,
+            "evidence": "<select"
+          },
+          {
+            "operation": "read",
+            "access": "sql",
+            "line": 286,
+            "evidence": "</select>"
+          }
+        ],
+        "security": [
+          {
+            "kind": "input_validation",
+            "line": 42,
+            "evidence": "me = JSON.parse(localStorage.getItem('user')) || {};",
+            "confidence": "high"
+          },
+          {
+            "kind": "secret_handling",
+            "line": 153,
+            "evidence": "localStorage.removeItem('token');",
+            "confidence": "low"
+          }
+        ],
+        "conventions": [],
+        "findings": [
+          {
+            "code": "multiple_writes_without_detected_transaction",
+            "severity": "low",
+            "message": "Multiple write/delete operations were detected without a transaction fact.",
+            "line": 97
+          }
+        ],
+        "links": [
+          {
+            "kind": "VALIDATES",
+            "line": 42,
+            "evidence": "me = JSON.parse(localStorage.getItem('user')) || {};",
+            "confidence": "high"
+          }
+        ]
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-web/src/api.js": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-web\\src\\api.js",
+      "moduleName": "helpdesk-web/src/api.js",
+      "exports": [
+        "default"
+      ],
+      "exportLines": {
+        "default": 80
+      },
+      "exportRanges": {
+        "default": {
+          "startLine": 80,
+          "endLine": 80
+        }
+      },
+      "exportKinds": {
+        "default": "function"
+      },
+      "imports": [
+        "axios"
+      ],
+      "language": "javascript",
+      "mtime": "2026-09-28T23:16:08.448Z",
+      "sizeBytes": 3668,
+      "mtimeMs": 1790637368448.5989,
+      "ontology": {
+        "roles": [
+          "source_module"
+        ],
+        "packageBoundary": "helpdesk-web/src",
+        "routes": [],
+        "dataOperations": [
+          {
+            "operation": "read",
+            "access": "network",
+            "line": 8,
+            "evidence": "import axios from 'axios';"
+          },
+          {
+            "operation": "write",
+            "access": "network",
+            "line": 13,
+            "evidence": "const api = axios.create({"
+          }
+        ],
+        "security": [
+          {
+            "kind": "secret_handling",
+            "line": 38,
+            "evidence": "const token = localStorage.getItem('token');",
+            "confidence": "low"
+          },
+          {
+            "kind": "secret_handling",
+            "line": 40,
+            "evidence": "if (token) {",
+            "confidence": "low"
+          },
+          {
+            "kind": "authorization",
+            "line": 42,
+            "evidence": "config.headers.Authorization = `Bearer ${token}`;",
+            "confidence": "high"
+          },
+          {
+            "kind": "secret_handling",
+            "line": 42,
+            "evidence": "config.headers.Authorization = `Bearer ${token}`;",
+            "confidence": "low"
+          },
+          {
+            "kind": "secret_handling",
+            "line": 63,
+            "evidence": "localStorage.removeItem('token');",
+            "confidence": "low"
+          }
+        ],
+        "conventions": [],
+        "findings": [],
+        "links": [
+          {
+            "kind": "AUTHORIZES",
+            "line": 42,
+            "evidence": "config.headers.Authorization = `Bearer ${token}`;",
+            "confidence": "high"
+          }
+        ]
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-web/src/App.jsx": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-web\\src\\App.jsx",
+      "moduleName": "helpdesk-web/src/App.jsx",
+      "exports": [
+        "default"
+      ],
+      "exportLines": {
+        "default": 107
+      },
+      "exportRanges": {
+        "default": {
+          "startLine": 107,
+          "endLine": 107
+        }
+      },
+      "exportKinds": {
+        "default": "function"
+      },
+      "imports": [
+        "react-router-dom",
+        "./Admin.jsx",
+        "./Login.jsx",
+        "./Tickets.jsx"
+      ],
+      "language": "javascript",
+      "mtime": "2026-09-29T00:49:42.665Z",
+      "sizeBytes": 4258,
+      "mtimeMs": 1790642982665.739,
+      "ontology": {
+        "roles": [
+          "source_module"
+        ],
+        "packageBoundary": "helpdesk-web/src",
+        "routes": [],
+        "dataOperations": [],
+        "security": [
+          {
+            "kind": "secret_handling",
+            "line": 30,
+            "evidence": "const token = localStorage.getItem('token');",
+            "confidence": "low"
+          },
+          {
+            "kind": "secret_handling",
+            "line": 34,
+            "evidence": "if (!token) return <Navigate to=\"/\" replace />;",
+            "confidence": "low"
+          },
+          {
+            "kind": "input_validation",
+            "line": 41,
+            "evidence": "role = JSON.parse(localStorage.getItem('user'))?.role;",
+            "confidence": "high"
+          }
+        ],
+        "conventions": [],
+        "findings": [],
+        "links": [
+          {
+            "kind": "VALIDATES",
+            "line": 41,
+            "evidence": "role = JSON.parse(localStorage.getItem('user'))?.role;",
+            "confidence": "high"
+          }
+        ]
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-web/src/Login.jsx": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-web\\src\\Login.jsx",
+      "moduleName": "helpdesk-web/src/Login.jsx",
+      "exports": [
+        "default"
+      ],
+      "exportLines": {
+        "default": 194
+      },
+      "exportRanges": {
+        "default": {
+          "startLine": 194,
+          "endLine": 194
+        }
+      },
+      "exportKinds": {
+        "default": "function"
+      },
+      "imports": [
+        "react",
+        "react-router-dom",
+        "./api"
+      ],
+      "language": "javascript",
+      "mtime": "2026-09-28T23:17:58.979Z",
+      "sizeBytes": 8023,
+      "mtimeMs": 1790637478979.0884,
+      "ontology": {
+        "roles": [
+          "source_module"
+        ],
+        "packageBoundary": "helpdesk-web/src",
+        "routes": [],
+        "dataOperations": [],
+        "security": [
+          {
+            "kind": "secret_handling",
+            "line": 29,
+            "evidence": "password: '',",
+            "confidence": "low"
+          },
+          {
+            "kind": "secret_handling",
+            "line": 72,
+            "evidence": "localStorage.setItem('token', data.token);",
+            "confidence": "low"
+          },
+          {
+            "kind": "secret_handling",
+            "line": 141,
+            "evidence": "Password",
+            "confidence": "low"
+          },
+          {
+            "kind": "secret_handling",
+            "line": 143,
+            "evidence": "type=\"password\"",
+            "confidence": "low"
+          },
+          {
+            "kind": "secret_handling",
+            "line": 144,
+            "evidence": "name=\"password\"",
+            "confidence": "low"
+          },
+          {
+            "kind": "secret_handling",
+            "line": 145,
+            "evidence": "value={form.password}",
+            "confidence": "low"
+          },
+          {
+            "kind": "secret_handling",
+            "line": 157,
+            "evidence": "Confirm password",
+            "confidence": "low"
+          },
+          {
+            "kind": "secret_handling",
+            "line": 159,
+            "evidence": "type=\"password\"",
+            "confidence": "low"
+          }
+        ],
+        "conventions": [],
+        "findings": [],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-web/src/main.jsx": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-web\\src\\main.jsx",
+      "moduleName": "helpdesk-web/src/main.jsx",
+      "exports": [],
+      "imports": [
+        "react",
+        "react-dom/client",
+        "./index.css",
+        "./App.jsx"
+      ],
+      "language": "javascript",
+      "mtime": "2026-09-28T23:09:33.523Z",
+      "sizeBytes": 229,
+      "mtimeMs": 1790636973523.4456,
+      "ontology": {
+        "roles": [
+          "source_module"
+        ],
+        "packageBoundary": "helpdesk-web/src",
+        "routes": [],
+        "dataOperations": [],
+        "security": [],
+        "conventions": [],
+        "findings": [],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-web/src/Tickets.jsx": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-web\\src\\Tickets.jsx",
+      "moduleName": "helpdesk-web/src/Tickets.jsx",
+      "exports": [
+        "default"
+      ],
+      "exportLines": {
+        "default": 432
+      },
+      "exportRanges": {
+        "default": {
+          "startLine": 432,
+          "endLine": 432
+        }
+      },
+      "exportKinds": {
+        "default": "function"
+      },
+      "imports": [
+        "react",
+        "react-router-dom",
+        "./api"
+      ],
+      "language": "javascript",
+      "mtime": "2026-09-29T00:49:03.710Z",
+      "sizeBytes": 18766,
+      "mtimeMs": 1790642943710.0784,
+      "ontology": {
+        "roles": [
+          "source_module"
+        ],
+        "packageBoundary": "helpdesk-web/src",
+        "routes": [],
+        "dataOperations": [
+          {
+            "operation": "write",
+            "access": "unknown",
+            "line": 125,
+            "evidence": ": 'Could not create ticket.'"
+          },
+          {
+            "operation": "write",
+            "access": "unknown",
+            "line": 139,
+            "evidence": "const { data } = await api.patch(`/tickets/${ticket.id}`, { status });"
+          },
+          {
+            "operation": "write",
+            "access": "sql",
+            "line": 144,
+            "evidence": "setError(err.response?.data?.message || 'Could not update status.');"
+          },
+          {
+            "operation": "write",
+            "access": "unknown",
+            "line": 156,
+            "evidence": "const { data } = await api.patch(`/tickets/${ticket.id}`, {"
+          },
+          {
+            "operation": "write",
+            "access": "sql",
+            "line": 161,
+            "evidence": "setError(err.response?.data?.message || 'Could not update assignment.');"
+          },
+          {
+            "operation": "delete",
+            "access": "sql",
+            "line": 172,
+            "evidence": "await api.delete(`/tickets/${id}`);"
+          },
+          {
+            "operation": "delete",
+            "access": "sql",
+            "line": 176,
+            "evidence": "setError(err.response?.data?.message || 'Could not delete ticket.');"
+          },
+          {
+            "operation": "read",
+            "access": "sql",
+            "line": 272,
+            "evidence": "<select"
+          },
+          {
+            "operation": "read",
+            "access": "sql",
+            "line": 286,
+            "evidence": "</select>"
+          },
+          {
+            "operation": "read",
+            "access": "sql",
+            "line": 291,
+            "evidence": "<select"
+          },
+          {
+            "operation": "read",
+            "access": "sql",
+            "line": 299,
+            "evidence": "</select>"
+          },
+          {
+            "operation": "write",
+            "access": "unknown",
+            "line": 318,
+            "evidence": ": 'No tickets yet — create one above.'}"
+          },
+          {
+            "operation": "read",
+            "access": "sql",
+            "line": 399,
+            "evidence": "<select"
+          },
+          {
+            "operation": "read",
+            "access": "sql",
+            "line": 400,
+            "evidence": "className=\"status-select\""
+          },
+          {
+            "operation": "read",
+            "access": "sql",
+            "line": 407,
+            "evidence": "</select>"
+          }
+        ],
+        "security": [
+          {
+            "kind": "input_validation",
+            "line": 51,
+            "evidence": "me = JSON.parse(localStorage.getItem('user')) || {};",
+            "confidence": "high"
+          },
+          {
+            "kind": "authorization",
+            "line": 59,
+            "evidence": "const isAdmin = me.role === 'admin';",
+            "confidence": "high"
+          },
+          {
+            "kind": "secret_handling",
+            "line": 192,
+            "evidence": "localStorage.removeItem('token');",
+            "confidence": "low"
+          },
+          {
+            "kind": "authorization",
+            "line": 223,
+            "evidence": "{isAdmin && <Link to=\"/admin\">Admin</Link>}",
+            "confidence": "high"
+          },
+          {
+            "kind": "authorization",
+            "line": 331,
+            "evidence": "isAdmin || (!isStaff && t.user_id === me.id && t.status === 'open');",
+            "confidence": "high"
+          }
+        ],
+        "conventions": [],
+        "findings": [
+          {
+            "code": "multiple_writes_without_detected_transaction",
+            "severity": "low",
+            "message": "Multiple write/delete operations were detected without a transaction fact.",
+            "line": 125
+          }
+        ],
+        "links": [
+          {
+            "kind": "VALIDATES",
+            "line": 51,
+            "evidence": "me = JSON.parse(localStorage.getItem('user')) || {};",
+            "confidence": "high"
+          },
+          {
+            "kind": "AUTHORIZES",
+            "line": 59,
+            "evidence": "const isAdmin = me.role === 'admin';",
+            "confidence": "high"
+          },
+          {
+            "kind": "AUTHORIZES",
+            "line": 223,
+            "evidence": "{isAdmin && <Link to=\"/admin\">Admin</Link>}",
+            "confidence": "high"
+          },
+          {
+            "kind": "AUTHORIZES",
+            "line": 331,
+            "evidence": "isAdmin || (!isStaff && t.user_id === me.id && t.status === 'open');",
+            "confidence": "high"
+          }
+        ]
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-web/vite.config.js": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-web\\vite.config.js",
+      "moduleName": "helpdesk-web/vite.config.js",
+      "exports": [
+        "default"
+      ],
+      "exportLines": {
+        "default": 5
+      },
+      "exportRanges": {
+        "default": {
+          "startLine": 5,
+          "endLine": 7
+        }
+      },
+      "exportKinds": {
+        "default": "function"
+      },
+      "imports": [
+        "@vitejs/plugin-react",
+        "vite"
+      ],
+      "language": "javascript",
+      "mtime": "2026-09-28T23:09:33.524Z",
+      "sizeBytes": 161,
+      "mtimeMs": 1790636973524.4553,
+      "ontology": {
+        "roles": [
+          "source_module"
+        ],
+        "packageBoundary": "helpdesk-web/vite.config.js",
+        "routes": [],
+        "dataOperations": [],
+        "security": [],
+        "conventions": [],
+        "findings": [],
+        "links": []
+      }
+    }
+  },
+  "edges": [
+    {
+      "source": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-web\\src\\Admin.jsx",
+      "target": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-web\\src\\api.js",
+      "importSpecifier": "./api",
+      "importType": "default",
+      "importedSymbols": [
+        "default"
+      ],
+      "usedSymbols": [
+        "default"
+      ],
+      "targetKind": "node"
+    },
+    {
+      "source": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-web\\src\\App.jsx",
+      "target": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-web\\src\\Admin.jsx",
+      "importSpecifier": "./Admin.jsx",
+      "importType": "default",
+      "importedSymbols": [
+        "default"
+      ],
+      "usedSymbols": [
+        "default"
+      ],
+      "targetKind": "node"
+    },
+    {
+      "source": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-web\\src\\App.jsx",
+      "target": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-web\\src\\Login.jsx",
+      "importSpecifier": "./Login.jsx",
+      "importType": "default",
+      "importedSymbols": [
+        "default"
+      ],
+      "usedSymbols": [
+        "default"
+      ],
+      "targetKind": "node"
+    },
+    {
+      "source": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-web\\src\\App.jsx",
+      "target": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-web\\src\\Tickets.jsx",
+      "importSpecifier": "./Tickets.jsx",
+      "importType": "default",
+      "importedSymbols": [
+        "default"
+      ],
+      "usedSymbols": [
+        "default"
+      ],
+      "targetKind": "node"
+    },
+    {
+      "source": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-web\\src\\Login.jsx",
+      "target": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-web\\src\\api.js",
+      "importSpecifier": "./api",
+      "importType": "default",
+      "importedSymbols": [
+        "default"
+      ],
+      "usedSymbols": [
+        "default"
+      ],
+      "targetKind": "node"
+    },
+    {
+      "source": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-web\\src\\main.jsx",
+      "target": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-web\\src\\App.jsx",
+      "importSpecifier": "./App.jsx",
+      "importType": "default",
+      "importedSymbols": [
+        "default"
+      ],
+      "usedSymbols": [
+        "default"
+      ],
+      "targetKind": "node"
+    },
+    {
+      "source": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-web\\src\\main.jsx",
+      "target": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-web\\src\\index.css",
+      "importSpecifier": "./index.css",
+      "importType": "sideeffect",
+      "importedSymbols": [],
+      "targetKind": "asset"
+    },
+    {
+      "source": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-web\\src\\Tickets.jsx",
+      "target": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-web\\src\\api.js",
+      "importSpecifier": "./api",
+      "importType": "default",
+      "importedSymbols": [
+        "default"
+      ],
+      "usedSymbols": [
+        "default"
+      ],
+      "targetKind": "node"
+    }
+  ],
+  "metadata": {
+    "generatedAt": "2026-10-29T03:39:01.193Z",
+    "generator": "repo-graph",
+    "nodeCount": 57,
+    "edgeCount": 8
+  },
+  "repoRootId": "projects",
+  "symbolEdges": [
+    {
+      "fromFile": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-web\\src\\Admin.jsx",
+      "fromSymbol": "Admin",
+      "toFile": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-web\\src\\api.js",
+      "toSymbol": "default",
+      "fromId": "50e608ff1806f575ccc72aac4e96fc32c873b4115e15e0ea45b87732d8cc1841",
+      "toId": "938ce9bc38d97039fcdd85fd41a9d33b34252d8a6066c9203f42e10ae2c480f2",
+      "id": "40fe76749a4bc0a7d60d3d35ade44d8c3b3f5eac144be8b585e29ede64d9e070",
+      "kind": "REFERENCES",
+      "confidence": 0.9,
+      "resolution": "import_binding",
+      "evidence": [
+        {
+          "file": "helpdesk-web/src/Admin.jsx",
+          "line": 57,
+          "snippetHash": "39a851b6c4939699ec2fc70b3ebc5bc6df8af2bfaf73d4f490a157a05d41f892",
+          "extractor": "tree-sitter/javascript"
+        }
+      ]
+    },
+    {
+      "fromFile": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-web\\src\\App.jsx",
+      "fromSymbol": "App",
+      "toFile": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-web\\src\\Login.jsx",
+      "toSymbol": "default",
+      "fromId": "8686ea3aeb0262b248b3ee427199a13257cf449c759111c89d995161976eeb37",
+      "toId": "c8843ef45d73b2c14b219c7737d6b27f18e329c5d27e31c7058e069eff359539",
+      "id": "8b28443fc31bf364a84a537d40316146e58414fdcef4646843f76c0504856303",
+      "kind": "REFERENCES",
+      "confidence": 0.9,
+      "resolution": "import_binding",
+      "evidence": [
+        {
+          "file": "helpdesk-web/src/App.jsx",
+          "line": 62,
+          "snippetHash": "6c217d318ebfecb66701036cfe4499b51c2404ac7339f50bf916d77316ad5d04",
+          "extractor": "tree-sitter/javascript"
+        }
+      ]
+    },
+    {
+      "fromFile": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-web\\src\\App.jsx",
+      "fromSymbol": "App",
+      "toFile": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-web\\src\\Tickets.jsx",
+      "toSymbol": "default",
+      "fromId": "8686ea3aeb0262b248b3ee427199a13257cf449c759111c89d995161976eeb37",
+      "toId": "f9140dfd25d9f6230f415bfeca106aa295e986799ba888294088e04a43676ef9",
+      "id": "8b4f3e493c28f54657afbe6f42bcb4c15892e80c9392adf5514e3d6b73f5c15b",
+      "kind": "REFERENCES",
+      "confidence": 0.9,
+      "resolution": "import_binding",
+      "evidence": [
+        {
+          "file": "helpdesk-web/src/App.jsx",
+          "line": 71,
+          "snippetHash": "ee7a9931847450ad8bf6ba549e7b44e8f58806d9f857e288e8ac330321a0a49e",
+          "extractor": "tree-sitter/javascript"
+        }
+      ]
+    },
+    {
+      "fromFile": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-web\\src\\App.jsx",
+      "fromSymbol": "App",
+      "toFile": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-web\\src\\Admin.jsx",
+      "toSymbol": "default",
+      "fromId": "8686ea3aeb0262b248b3ee427199a13257cf449c759111c89d995161976eeb37",
+      "toId": "dbbc3bf5738c2e4bb0adc18d95ddd5f2bc6b5033c9757b7c96aa89c894b5bf64",
+      "id": "cc3cb123f045bd81ab332755f2102ce70ea80b7ebf7a6eee7085563ff29f5cda",
+      "kind": "REFERENCES",
+      "confidence": 0.9,
+      "resolution": "import_binding",
+      "evidence": [
+        {
+          "file": "helpdesk-web/src/App.jsx",
+          "line": 93,
+          "snippetHash": "87410cb519811c3d609c4c23ce16b4fcae9be4b7c7ae2a3b83b67b60d345f5f6",
+          "extractor": "tree-sitter/javascript"
+        }
+      ]
+    },
+    {
+      "fromFile": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-web\\src\\Login.jsx",
+      "fromSymbol": "Login",
+      "toFile": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-web\\src\\api.js",
+      "toSymbol": "default",
+      "fromId": "407f918b18e2f290a88e0c3f849cd3706de28d5bedfaf910f906072c4b585695",
+      "toId": "938ce9bc38d97039fcdd85fd41a9d33b34252d8a6066c9203f42e10ae2c480f2",
+      "id": "9634566cf132c8beb28517781d5320758a04ab3eee6dbcbe1c9f515e7ce77807",
+      "kind": "REFERENCES",
+      "confidence": 0.9,
+      "resolution": "import_binding",
+      "evidence": [
+        {
+          "file": "helpdesk-web/src/Login.jsx",
+          "line": 67,
+          "snippetHash": "e378495b88e02acbfdd98c8491ff5d706de1dc0d90bced57065ede15087c4c06",
+          "extractor": "tree-sitter/javascript"
+        }
+      ]
+    },
+    {
+      "fromFile": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-web\\src\\main.jsx",
+      "fromSymbol": "<module>",
+      "toFile": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-web\\src\\App.jsx",
+      "toSymbol": "default",
+      "fromId": "758e267dcfa1b8b6eeb44c8992928a4c805d12a02dba3d7e538c73e32a4e3c37",
+      "toId": "99f399134e5660df15dffa98520fdee43d25005cea13dd79ba53de7ad0f4480d",
+      "id": "a8335d1335bbb05d203d386a4a665cd627dcf8db7f6b611162b284a7c9dab33e",
+      "kind": "REFERENCES",
+      "confidence": 0.9,
+      "resolution": "import_binding",
+      "evidence": [
+        {
+          "file": "helpdesk-web/src/main.jsx",
+          "line": 8,
+          "snippetHash": "fccabc786177d5653ef7ff1fe527de53d47a925879e68b9d775f612dba7e055b",
+          "extractor": "tree-sitter/javascript"
+        }
+      ]
+    },
+    {
+      "fromFile": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-web\\src\\Tickets.jsx",
+      "fromSymbol": "Tickets",
+      "toFile": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-web\\src\\api.js",
+      "toSymbol": "default",
+      "fromId": "635278844201b8fe57fa229a91ba1f8a0d784f1af647d4dd5e49550409328280",
+      "toId": "938ce9bc38d97039fcdd85fd41a9d33b34252d8a6066c9203f42e10ae2c480f2",
+      "id": "79070dfa545af59b65f44e8ccfe12d97a8a2adc96fa053a7c3f3eeeb8fd22eeb",
+      "kind": "REFERENCES",
+      "confidence": 0.9,
+      "resolution": "import_binding",
+      "evidence": [
+        {
+          "file": "helpdesk-web/src/Tickets.jsx",
+          "line": 80,
+          "snippetHash": "c4e0e4a2ee298a5395ee0c7f03e1e75ab5baf8eafa6aa3f108463ed221554f9d",
+          "extractor": "tree-sitter/javascript"
+        }
+      ]
+    }
+  ],
+  "diagnostics": {
+    "extractionFailures": [],
+    "unresolvedImports": [],
+    "oversizedFiles": [],
+    "unsupportedFiles": [],
+    "binaryFiles": [],
+    "unreadableFiles": [],
+    "validationSkippedFiles": [],
+    "extractorInputWitnesses": [
+      {
+        "file": "helpdesk-api/package.json",
+        "kind": "manifest",
+        "sizeBytes": 461,
+        "mtimeMs": 1787675219000
+      },
+      {
+        "file": "helpdesk-web/package.json",
+        "kind": "manifest",
+        "sizeBytes": 669,
+        "mtimeMs": 1790637184672.399
+      }
+    ],
+    "lowConfidenceEdgeCount": 0,
+    "walkTruncated": false,
+    "incrementalFallbacks": 0
+  }
+}

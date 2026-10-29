@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "bindingId": "04a7bc3c-6305-4478-92b5-88aa0d9c1d71",
+  "generationId": "3d45e4d2-19f1-455b-8b70-ae7e01b84a9f",
+  "revision": 1,
+  "lifecycleState": "live",
+  "workspaceIdentity": "c:/users/asus/desktop/php/projects",
+  "planId": "default-Auth_hardening__token_expiry___throttled_auth_routes",
+  "planStructureHash": "58d8cc6d3868a5c140abfd8b289a147888999443fc7324f8c7cad88e4e077117",
+  "taskId": "1.2",
+  "ownerSessionId": "ses_e7a4095c6ffeRAiT0pgONWwe3r",
+  "ownerMessageId": "msg_187dcdc95001owcrj3rUh0Dz2p",
+  "activation": "declaration",
+  "source": "declare_scope",
+  "files": [
+    "helpdesk-api/app/Providers/AppServiceProvider.php",
+    "helpdesk-api/routes/api.php"
+  ],
+  "declaredAt": 1793280777797,
+  "updatedAt": 1793280777797,
+  "leaseStartedAt": 1793280777797,
+  "expiresAt": 1793284377797
+}

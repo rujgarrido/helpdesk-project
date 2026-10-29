@@ -1,0 +1,24 @@
+{
+  "taskId": "4.0",
+  "required_gates": [
+    "sme"
+  ],
+  "gates": {
+    "sme": {
+      "sessionId": "ses_e7a4095c6ffeRAiT0pgONWwe3r",
+      "timestamp": "2026-10-29T13:26:52.741Z",
+      "agent": "sme"
+    }
+  },
+  "workflow": {
+    "schema": "exact-task-v1",
+    "generation": 0,
+    "state": "idle",
+    "retryCount": 0,
+    "retryHistory": [],
+    "retryEpoch": 0,
+    "lastOutcome": "gate_recorded",
+    "lastTransitionId": "gate:chatcmpl-tool-bd9f6d307e47b974:4.0",
+    "updatedAt": "2026-10-29T13:26:52.741Z"
+  }
+}

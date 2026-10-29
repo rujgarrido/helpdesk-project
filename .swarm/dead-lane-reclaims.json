@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "lanePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\.swarm-worktrees\\ses_e7a4095c6ffeRAiT0pgONWwe3r\\1.1",
+      "branchName": "swarm/lane/ses_e7a4095c6ffeRAiT0pgONWwe3r/1.1",
+      "parentSessionId": "ses_e7a4095c6ffeRAiT0pgONWwe3r",
+      "taskId": "1.1",
+      "reason": "fatal: 'C:\\Users\\Asus\\Desktop\\PHP\\projects\\.swarm-worktrees\\ses_e7a4095c6ffeRAiT0pgONWwe3r\\1.1' contains modified or untracked files, use --force to delete it",
+      "recordedAt": 1793280848824
+    }
+  ]
+}

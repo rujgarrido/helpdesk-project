@@ -1,0 +1,1 @@
+{"schemaVersion":1,"taskId":"4.0","generation":0,"normalizedRole":"sme","testEngineerExempt":null,"requiredGates":["sme"],"sourceEvent":"gate_recorded","sourceTransitionId":"gate:chatcmpl-tool-bd9f6d307e47b974:4.0","recordedAt":"2026-10-29T13:26:52.754Z","previousChainHash":null,"chainHash":"7e7046c0475a6eb05ec566b68da6d1176133a62922cb495d50f096c6ad30b4c8"}
