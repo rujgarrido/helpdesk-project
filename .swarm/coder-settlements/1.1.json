@@ -45,5 +45,5 @@
   "accepted": false,
   "testEngineerExempt": false,
   "settlementFailed": false,
-  "cleanupComplete": false
+  "cleanupComplete": true
 }

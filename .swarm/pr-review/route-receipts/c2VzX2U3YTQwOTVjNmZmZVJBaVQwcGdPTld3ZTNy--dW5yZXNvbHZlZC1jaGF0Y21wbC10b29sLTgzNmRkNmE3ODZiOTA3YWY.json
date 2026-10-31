@@ -1,0 +1,10 @@
+{
+  "kind": "review_route_router_error",
+  "version": 1,
+  "code": "NO_CHANGED_FILES",
+  "failOpen": true,
+  "sessionId": "ses_e7a4095c6ffeRAiT0pgONWwe3r",
+  "taskId": "unresolved-chatcmpl-tool-836dd6a786b907af",
+  "createdAt": "2026-10-31T10:11:11.508Z",
+  "mac": "870027e8ad9813a738a2f2324f4259e68747ecaae09f7ae8ecd02240fbb371bb"
+}

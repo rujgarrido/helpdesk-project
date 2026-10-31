@@ -33,14 +33,14 @@ class AppServiceProvider extends ServiceProvider
         // don't share a bucket (good for offices) while one attacker guessing
         // one account still trips the 5/min. The is_string() guard is NOT
         // cosmetic: a request like {email: [x]} must fall into the shared
-        // ''|ip bucket and be COUNTED — casting an array ((string) cast or
-        // strtolower) raises a PHP warning, Laravel converts any warning on
-        // a public route into ErrorException => HTTP 500, and it happens
-        // INSIDE the limiter BEFORE the hit() loop, so those requests would
-        // be unthrottled 500s. Non-string input → one shared bucket, still
-        // counted. A secondary IP bucket caps total flood from a single
-        // address at 20/min (NOTE: that bucket IS shared by all users of
-        // one NAT — that is its job).
+        // ''|ip bucket and be COUNTED — casting an array emits E_WARNING and
+        // strtolower(array) throws TypeError; Laravel converts any warning
+        // raised on a public route into ErrorException => HTTP 500, and it
+        // would happen INSIDE the limiter BEFORE the hit() loop, so those
+        // requests would be unthrottled 500s. Non-string input → one shared
+        // bucket, still counted. A secondary IP bucket caps total flood
+        // from a single address at 20/min (NOTE: that bucket IS shared by
+        // all users of one NAT — that is its job).
         RateLimiter::for('login', function (Request $request): array {
             $email = $request->input('email');
             $email = is_string($email) ? strtolower($email) : ''; // non-string → shared bucket, still counted

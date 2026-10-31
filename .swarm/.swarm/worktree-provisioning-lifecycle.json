@@ -36,6 +36,18 @@
       "generation": 1,
       "branchName": "swarm/lane/ses_e7a4095c6ffeRAiT0pgONWwe3r/1.1",
       "recordedAt": 1793280842509
+    },
+    {
+      "schemaVersion": 1,
+      "state": "OWNER_REMOVED",
+      "callID": "chatcmpl-tool-a5363d018a32dc04",
+      "parentSessionId": "ses_e7a4095c6ffeRAiT0pgONWwe3r",
+      "worktreeSessionId": "ses_e7a4095c6ffeRAiT0pgONWwe3r",
+      "taskId": "1.1",
+      "reservationId": "bgcr1:29f41cdd7298a5c7f065c318b316d65c257b4f61230f66ff7a7a3fb51e93997d",
+      "generation": 1,
+      "branchName": "swarm/lane/ses_e7a4095c6ffeRAiT0pgONWwe3r/1.1",
+      "recordedAt": 1793441817938
     }
   ]
 }

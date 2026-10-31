@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "bindingId": "3e8a230a-c8f4-415c-9b87-6ffd2544ad52",
+  "generationId": "bf5c92cc-02f8-437f-a873-19592e282736",
+  "revision": 1,
+  "lifecycleState": "live",
+  "workspaceIdentity": "c:/users/asus/desktop/php/projects",
+  "planId": "default-Auth_hardening__token_expiry___throttled_auth_routes",
+  "planStructureHash": "a3338b0b1161866c4a03749b32e64dea866c82891989bbc291d91978927d6d6e",
+  "taskId": "1.4",
+  "ownerSessionId": "ses_e7a4095c6ffeRAiT0pgONWwe3r",
+  "ownerMessageId": "msg_19178f3b3001aeINUqevPwrKUV",
+  "activation": "declaration",
+  "source": "declare_scope",
+  "files": [
+    "helpdesk-api/tests/Feature/AuthRateLimitTest.php"
+  ],
+  "declaredAt": 1793441996515,
+  "updatedAt": 1793441996515,
+  "leaseStartedAt": 1793441996515,
+  "expiresAt": 1793445596515
+}

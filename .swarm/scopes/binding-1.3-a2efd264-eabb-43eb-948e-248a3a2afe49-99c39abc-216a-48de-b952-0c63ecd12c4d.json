@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "bindingId": "a2efd264-eabb-43eb-948e-248a3a2afe49",
+  "generationId": "99c39abc-216a-48de-b952-0c63ecd12c4d",
+  "revision": 1,
+  "lifecycleState": "live",
+  "workspaceIdentity": "c:/users/asus/desktop/php/projects",
+  "planId": "default-Auth_hardening__token_expiry___throttled_auth_routes",
+  "planStructureHash": "a3338b0b1161866c4a03749b32e64dea866c82891989bbc291d91978927d6d6e",
+  "taskId": "1.3",
+  "ownerSessionId": "ses_e7a4095c6ffeRAiT0pgONWwe3r",
+  "ownerMessageId": "msg_19178f3b3001aeINUqevPwrKUV",
+  "activation": "declaration",
+  "source": "declare_scope",
+  "files": [
+    "helpdesk-api/tests/Feature/TokenExpirationTest.php"
+  ],
+  "declaredAt": 1793441996395,
+  "updatedAt": 1793441996395,
+  "leaseStartedAt": 1793441996395,
+  "expiresAt": 1793445596395
+}

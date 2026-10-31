@@ -14,7 +14,7 @@
           "phase": 1,
           "status": "pending",
           "size": "small",
-          "description": "H1: Enable Sanctum bearer-token expiration — config/sanctum.php: 'expiration' => max(1, (int) env('SANCTUM_EXPIRATION_MINUTES', 1440)) (fails closed: empty env can't disable expiry); add SANCTUM_EXPIRATION_MINUTES=1440 to .env.example; document fixed 24h-from-login semantics in config comments. Add scheduled pruning in routes/console.php: Schedule::command('sanctum:prune-expired --hours=24')->daily() (with Illuminate\\Support\\Facades\\Schedule import) + a comment noting it needs host cron (schedule:run) and is housekeeping only — the guard enforces expiry regardless.",
+          "description": "H1: Enable Sanctum bearer-token expiration — config/sanctum.php: 'expiration' => max(1, (int) env('SANCTUM_EXPIRATION_MINUTES', 1440)) (fails closed: empty/0 env cannot disable expiry); .env.example documents SANCTUM_EXPIRATION_MINUTES=1440 (log: this file write is currently denied by runtime config-zone policy for architect — needs a coder pass or manual add); config comments document the fixed 24h-from-login semantics and config:cache deploy note. routes/console.php: Schedule::command('sanctum:prune-expired --hours=24')->daily() with Schedule facade import + cron/guard-enforces-anyway comments. IMPLEMENTED + reviewer APPROVED (task 1.1).",
           "depends": [],
           "files_touched": [
             "helpdesk-api/.env.example",
@@ -27,7 +27,7 @@
           "phase": 1,
           "status": "pending",
           "size": "small",
-          "description": "H2: Named rate limiters in AppServiceProvider::boot() — RateLimiter::for('login', fn) = Limit::perMinute(5)->by(strtolower((string) $request->input('email')).'|'.$request->ip()) plus Limit::perMinute(20)->by($request->ip()); RateLimiter::for('register', perMinute(5)->by(ip())) (string cast avoids pre-validation TypeError on array input). Routes: POST /api/login ->middleware('throttle:login'); POST /api/register ->middleware('throttle:register'); EXACTLY one argument each.",
+          "description": "H2: Named rate limiters in AppServiceProvider::boot(). FINAL IMPLEMENTED FORM (do NOT use strtolower((string) ...) — that construct 500s on array input and is uncounted): $email = $request->input('email'); $email = is_string($email) ? strtolower($email) : ''; login limiter = Limit::perMinute(5)->by($email.'|'.ip()) + Limit::perMinute(20)->by(ip()); register limiter = perMinute(5)->by(ip()). Routes: POST /api/login ->middleware('throttle:login'); POST /api/register ->middleware('throttle:register'); EXACTLY one argument each. IMPLEMENTED + reviewer APPROVED after Tier-2 fix and live 500/429 regression probe.",
           "depends": [],
           "files_touched": [
             "helpdesk-api/app/Providers/AppServiceProvider.php",
@@ -39,7 +39,7 @@
           "phase": 1,
           "status": "pending",
           "size": "small",
-          "description": "TEST task (depends 1.1): tests/Feature/TokenExpirationTest.php — test class USES RefreshDatabase (phpunit.xml uses :memory: sqlite; no such table otherwise); build user via User::factory(); issue token with $user->createToken('api')->plainTextToken + $this->withHeader('Authorization', \"Bearer $token\") — NEVER Sanctum::actingAs (TransientToken bypasses expiry); $this->travel(1441)->minutes() then GET /api/user asserts 401 with JSON message 'Unauthenticated.'; also assert pre-travel 200 sanity. Verify: php artisan test --filter=TokenExpirationTest.",
+          "description": "TEST task (depends 1.1): tests/Feature/TokenExpirationTest.php — test class USES RefreshDatabase (phpunit.xml uses :memory: sqlite; no such table otherwise); build user via User::factory(); issue token with $user->createToken('api')->plainTextToken + $this->withHeader('Authorization', \"Bearer $token\") — NEVER Sanctum::actingAs (TransientToken bypasses expiry); advance time by (int) config('sanctum.expiration') + 1 minutes (NOT hardcoded 1441) then GET /api/user asserts 401 with JSON message 'Unauthenticated.'; also assert pre-travel 200 sanity. Verify: php artisan test --filter=TokenExpirationTest.",
           "depends": [
             "1.1"
           ],

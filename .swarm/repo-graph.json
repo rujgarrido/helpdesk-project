@@ -1093,27 +1093,27 @@
         "boot"
       ],
       "exportLines": {
-        "AppServiceProvider": 7,
+        "AppServiceProvider": 10,
         "App\\Providers": 3,
-        "register": 12,
-        "boot": 20
+        "register": 15,
+        "boot": 23
       },
       "exportRanges": {
         "AppServiceProvider": {
-          "startLine": 7,
-          "endLine": 24
+          "startLine": 10,
+          "endLine": 73
         },
         "App\\Providers": {
           "startLine": 3,
           "endLine": 3
         },
         "register": {
-          "startLine": 12,
-          "endLine": 15
+          "startLine": 15,
+          "endLine": 18
         },
         "boot": {
-          "startLine": 20,
-          "endLine": 23
+          "startLine": 23,
+          "endLine": 72
         }
       },
       "exportKinds": {
@@ -1123,12 +1123,15 @@
         "boot": "method"
       },
       "imports": [
+        "Illuminate\\Cache\\RateLimiting\\Limit",
+        "Illuminate\\Http\\Request",
+        "Illuminate\\Support\\Facades\\RateLimiter",
         "Illuminate\\Support\\ServiceProvider"
       ],
       "language": "php",
-      "mtime": "2026-08-25T16:26:59.000Z",
-      "sizeBytes": 361,
-      "mtimeMs": 1787675219000,
+      "mtime": "2026-10-31T10:19:03.284Z",
+      "sizeBytes": 3230,
+      "mtimeMs": 1793441943284.7822,
       "ontology": {
         "roles": [
           "source_module"
@@ -1595,9 +1598,9 @@
         "Laravel\\Sanctum\\Sanctum"
       ],
       "language": "php",
-      "mtime": "2026-09-28T15:52:14.933Z",
-      "sizeBytes": 3105,
-      "mtimeMs": 1790610734933.5737,
+      "mtime": "2026-10-29T14:58:28.382Z",
+      "sizeBytes": 4148,
+      "mtimeMs": 1793285908382.7795,
       "ontology": {
         "roles": [
           "source_module"
@@ -1614,7 +1617,7 @@
           },
           {
             "kind": "input_validation",
-            "line": 84,
+            "line": 101,
             "evidence": "'validate_csrf_token' => ValidateCsrfToken::class,",
             "confidence": "high"
           }
@@ -1630,7 +1633,7 @@
           },
           {
             "kind": "VALIDATES",
-            "line": 84,
+            "line": 101,
             "evidence": "'validate_csrf_token' => ValidateCsrfToken::class,",
             "confidence": "high"
           }
@@ -2653,9 +2656,9 @@
         "Illuminate\\Support\\Facades\\Route"
       ],
       "language": "php",
-      "mtime": "2026-09-29T00:34:19.462Z",
-      "sizeBytes": 4093,
-      "mtimeMs": 1790642059462.5686,
+      "mtime": "2026-10-29T14:54:11.949Z",
+      "sizeBytes": 4974,
+      "mtimeMs": 1793285651949.7341,
       "ontology": {
         "roles": [
           "api_route"
@@ -2666,19 +2669,19 @@
           {
             "operation": "write",
             "access": "sql",
-            "line": 67,
+            "line": 80,
             "evidence": "Route::patch('/categories/{category}', [CategoryController::class, 'update']);"
           },
           {
             "operation": "delete",
             "access": "sql",
-            "line": 68,
+            "line": 81,
             "evidence": "Route::delete('/categories/{category}', [CategoryController::class, 'destroy']);"
           },
           {
             "operation": "write",
             "access": "unknown",
-            "line": 72,
+            "line": 85,
             "evidence": "Route::patch('/users/{user}/role', [AdminUserController::class, 'updateRole']);"
           }
         ],
@@ -2689,7 +2692,7 @@
             "code": "multiple_writes_without_detected_transaction",
             "severity": "low",
             "message": "Multiple write/delete operations were detected without a transaction fact.",
-            "line": 67
+            "line": 80
           }
         ],
         "links": []
@@ -2701,12 +2704,13 @@
       "exports": [],
       "imports": [
         "Illuminate\\Foundation\\Inspiring",
-        "Illuminate\\Support\\Facades\\Artisan"
+        "Illuminate\\Support\\Facades\\Artisan",
+        "Illuminate\\Support\\Facades\\Schedule"
       ],
       "language": "php",
-      "mtime": "2026-08-25T16:26:59.000Z",
-      "sizeBytes": 210,
-      "mtimeMs": 1787675219000,
+      "mtime": "2026-10-29T14:58:36.908Z",
+      "sizeBytes": 863,
+      "mtimeMs": 1793285916908.824,
       "ontology": {
         "roles": [
           "api_route"
@@ -3650,6 +3654,283 @@
         "findings": [],
         "links": []
       }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/tests/Feature/AuthRateLimitTest.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\tests\\Feature\\AuthRateLimitTest.php",
+      "moduleName": "helpdesk-api/tests/Feature/AuthRateLimitTest.php",
+      "exports": [
+        "AuthRateLimitTest",
+        "Tests\\Feature",
+        "test_login_is_throttled_after_five_bad_attempts_and_recovers_after_decay",
+        "test_register_is_throttled_after_five_accounts_from_one_ip"
+      ],
+      "exportLines": {
+        "AuthRateLimitTest": 30,
+        "Tests\\Feature": 3,
+        "test_login_is_throttled_after_five_bad_attempts_and_recovers_after_decay": 45,
+        "test_register_is_throttled_after_five_accounts_from_one_ip": 85
+      },
+      "exportRanges": {
+        "AuthRateLimitTest": {
+          "startLine": 30,
+          "endLine": 109
+        },
+        "Tests\\Feature": {
+          "startLine": 3,
+          "endLine": 3
+        },
+        "test_login_is_throttled_after_five_bad_attempts_and_recovers_after_decay": {
+          "startLine": 45,
+          "endLine": 73
+        },
+        "test_register_is_throttled_after_five_accounts_from_one_ip": {
+          "startLine": 85,
+          "endLine": 108
+        }
+      },
+      "exportKinds": {
+        "AuthRateLimitTest": "class",
+        "Tests\\Feature": "type",
+        "test_login_is_throttled_after_five_bad_attempts_and_recovers_after_decay": "method",
+        "test_register_is_throttled_after_five_accounts_from_one_ip": "method"
+      },
+      "imports": [
+        "App\\Models\\User",
+        "Illuminate\\Foundation\\Testing\\RefreshDatabase",
+        "Tests\\TestCase"
+      ],
+      "language": "php",
+      "mtime": "2026-10-31T10:27:58.945Z",
+      "sizeBytes": 5037,
+      "mtimeMs": 1793442478945.821,
+      "ontology": {
+        "roles": [
+          "test_file"
+        ],
+        "packageBoundary": "helpdesk-api/tests",
+        "routes": [],
+        "dataOperations": [
+          {
+            "operation": "write",
+            "access": "unknown",
+            "line": 47,
+            "evidence": "$user = User::factory()->create();"
+          },
+          {
+            "operation": "read",
+            "access": "unknown",
+            "line": 107,
+            "evidence": "$this->assertSame(5, User::count());"
+          }
+        ],
+        "security": [
+          {
+            "kind": "secret_handling",
+            "line": 53,
+            "evidence": "'password' => 'not-the-factory-password',",
+            "confidence": "low"
+          },
+          {
+            "kind": "secret_handling",
+            "line": 71,
+            "evidence": "'password' => 'not-the-factory-password',",
+            "confidence": "low"
+          },
+          {
+            "kind": "secret_handling",
+            "line": 92,
+            "evidence": "'password' => 'super-secret-password',",
+            "confidence": "low"
+          },
+          {
+            "kind": "secret_handling",
+            "line": 93,
+            "evidence": "'password_confirmation' => 'super-secret-password',",
+            "confidence": "low"
+          }
+        ],
+        "conventions": [
+          {
+            "name": "test_file_naming",
+            "evidence": "AuthRateLimitTest.php matches test/spec naming"
+          }
+        ],
+        "findings": [],
+        "links": []
+      }
+    },
+    "C:/Users/Asus/Desktop/PHP/projects/helpdesk-api/tests/Feature/TokenExpirationTest.php": {
+      "filePath": "C:\\Users\\Asus\\Desktop\\PHP\\projects\\helpdesk-api\\tests\\Feature\\TokenExpirationTest.php",
+      "moduleName": "helpdesk-api/tests/Feature/TokenExpirationTest.php",
+      "exports": [
+        "TokenExpirationTest",
+        "Tests\\Feature",
+        "test_fresh_token_authenticates_against_user_endpoint",
+        "test_token_is_rejected_after_configured_expiration_window",
+        "test_token_still_valid_inside_configured_expiration_window"
+      ],
+      "exportLines": {
+        "TokenExpirationTest": 31,
+        "Tests\\Feature": 3,
+        "test_fresh_token_authenticates_against_user_endpoint": 42,
+        "test_token_is_rejected_after_configured_expiration_window": 68,
+        "test_token_still_valid_inside_configured_expiration_window": 91
+      },
+      "exportRanges": {
+        "TokenExpirationTest": {
+          "startLine": 31,
+          "endLine": 108
+        },
+        "Tests\\Feature": {
+          "startLine": 3,
+          "endLine": 3
+        },
+        "test_fresh_token_authenticates_against_user_endpoint": {
+          "startLine": 42,
+          "endLine": 55
+        },
+        "test_token_is_rejected_after_configured_expiration_window": {
+          "startLine": 68,
+          "endLine": 81
+        },
+        "test_token_still_valid_inside_configured_expiration_window": {
+          "startLine": 91,
+          "endLine": 107
+        }
+      },
+      "exportKinds": {
+        "TokenExpirationTest": "class",
+        "Tests\\Feature": "type",
+        "test_fresh_token_authenticates_against_user_endpoint": "method",
+        "test_token_is_rejected_after_configured_expiration_window": "method",
+        "test_token_still_valid_inside_configured_expiration_window": "method"
+      },
+      "imports": [
+        "App\\Models\\User",
+        "Illuminate\\Foundation\\Testing\\RefreshDatabase",
+        "Tests\\TestCase"
+      ],
+      "language": "php",
+      "mtime": "2026-10-31T10:26:43.966Z",
+      "sizeBytes": 4579,
+      "mtimeMs": 1793442403966.3315,
+      "ontology": {
+        "roles": [
+          "test_file"
+        ],
+        "packageBoundary": "helpdesk-api/tests",
+        "routes": [],
+        "dataOperations": [
+          {
+            "operation": "write",
+            "access": "unknown",
+            "line": 44,
+            "evidence": "$user = User::factory()->create();"
+          },
+          {
+            "operation": "write",
+            "access": "unknown",
+            "line": 70,
+            "evidence": "$user = User::factory()->create();"
+          },
+          {
+            "operation": "write",
+            "access": "unknown",
+            "line": 93,
+            "evidence": "$user = User::factory()->create();"
+          }
+        ],
+        "security": [
+          {
+            "kind": "secret_handling",
+            "line": 45,
+            "evidence": "$token = $user->createToken('api')->plainTextToken;",
+            "confidence": "low"
+          },
+          {
+            "kind": "authorization",
+            "line": 47,
+            "evidence": "$response = $this->withHeader('Authorization', \"Bearer {$token}\")",
+            "confidence": "high"
+          },
+          {
+            "kind": "secret_handling",
+            "line": 47,
+            "evidence": "$response = $this->withHeader('Authorization', \"Bearer {$token}\")",
+            "confidence": "low"
+          },
+          {
+            "kind": "secret_handling",
+            "line": 71,
+            "evidence": "$token = $user->createToken('api')->plainTextToken;",
+            "confidence": "low"
+          },
+          {
+            "kind": "authorization",
+            "line": 76,
+            "evidence": "$response = $this->withHeader('Authorization', \"Bearer {$token}\")",
+            "confidence": "high"
+          },
+          {
+            "kind": "secret_handling",
+            "line": 76,
+            "evidence": "$response = $this->withHeader('Authorization', \"Bearer {$token}\")",
+            "confidence": "low"
+          },
+          {
+            "kind": "secret_handling",
+            "line": 94,
+            "evidence": "$token = $user->createToken('api')->plainTextToken;",
+            "confidence": "low"
+          },
+          {
+            "kind": "authorization",
+            "line": 99,
+            "evidence": "$response = $this->withHeader('Authorization', \"Bearer {$token}\")",
+            "confidence": "high"
+          },
+          {
+            "kind": "secret_handling",
+            "line": 99,
+            "evidence": "$response = $this->withHeader('Authorization', \"Bearer {$token}\")",
+            "confidence": "low"
+          }
+        ],
+        "conventions": [
+          {
+            "name": "test_file_naming",
+            "evidence": "TokenExpirationTest.php matches test/spec naming"
+          }
+        ],
+        "findings": [
+          {
+            "code": "multiple_writes_without_detected_transaction",
+            "severity": "low",
+            "message": "Multiple write/delete operations were detected without a transaction fact.",
+            "line": 44
+          }
+        ],
+        "links": [
+          {
+            "kind": "AUTHORIZES",
+            "line": 47,
+            "evidence": "$response = $this->withHeader('Authorization', \"Bearer {$token}\")",
+            "confidence": "high"
+          },
+          {
+            "kind": "AUTHORIZES",
+            "line": 76,
+            "evidence": "$response = $this->withHeader('Authorization', \"Bearer {$token}\")",
+            "confidence": "high"
+          },
+          {
+            "kind": "AUTHORIZES",
+            "line": 99,
+            "evidence": "$response = $this->withHeader('Authorization', \"Bearer {$token}\")",
+            "confidence": "high"
+          }
+        ]
+      }
     }
   },
   "edges": [
@@ -3754,9 +4035,9 @@
     }
   ],
   "metadata": {
-    "generatedAt": "2026-10-29T03:39:01.193Z",
+    "generatedAt": "2026-10-31T14:09:51.070Z",
     "generator": "repo-graph",
-    "nodeCount": 57,
+    "nodeCount": 59,
     "edgeCount": 8
   },
   "repoRootId": "projects",

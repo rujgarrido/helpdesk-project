@@ -4,19 +4,22 @@
 
 | Tool | Calls | Success | Failed | Avg Duration |
 |------|-------|---------|--------|--------------|
-| read | 129 | 129 | 0 | 100ms |
-| shell | 43 | 43 | 0 | 1193ms |
-| glob | 38 | 38 | 0 | 257ms |
-| grep | 37 | 37 | 0 | 163ms |
-| edit | 8 | 8 | 0 | 48ms |
+| read | 149 | 149 | 0 | 93ms |
+| shell | 104 | 104 | 0 | 1095ms |
+| grep | 49 | 49 | 0 | 148ms |
+| glob | 45 | 45 | 0 | 250ms |
+| edit | 10 | 10 | 0 | 45ms |
+| task | 8 | 8 | 0 | 144528ms |
+| execute | 7 | 7 | 0 | 9ms |
 | webfetch | 7 | 7 | 0 | 561ms |
-| task | 5 | 5 | 0 | 79337ms |
-| execute | 4 | 4 | 0 | 10ms |
-| save_plan | 3 | 3 | 0 | 99ms |
+| save_plan | 5 | 5 | 0 | 84ms |
+| declare_scope | 4 | 4 | 0 | 17ms |
+| knowledge_receipt | 4 | 4 | 0 | 47ms |
 | syntax_check | 3 | 3 | 0 | 8ms |
 | get_approved_plan | 2 | 2 | 0 | 17ms |
-| declare_scope | 2 | 2 | 0 | 18ms |
 | approve_plan_critic | 2 | 2 | 0 | 19ms |
+| pre_check_batch | 2 | 2 | 0 | 902ms |
+| recover_stage_a_task | 2 | 2 | 0 | 4ms |
 | dispatch_lanes_async | 1 | 1 | 0 | 8ms |
 | dispatch_lanes | 1 | 1 | 0 | 300399ms |
-| pre_check_batch | 1 | 1 | 0 | 835ms |
+| write | 1 | 1 | 0 | 37ms |
